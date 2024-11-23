@@ -1,4 +1,5 @@
 ﻿using GameDevProject.Characters;
+using GameDevProject.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,6 +13,7 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     private Texture2D texture;
+    private Texture2D backgroundTexture;
     Hero hero;
     
 
@@ -34,7 +36,8 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        texture = Content.Load<Texture2D>("ichigoSprite");
+        texture = Content.Load<Texture2D>("tinyIchigo");
+        backgroundTexture = Content.Load<Texture2D>("backgroundSand");
 
         InitializeGameObject();
         // TODO: use this.Content to load your game content here
@@ -42,7 +45,7 @@ public class Game1 : Game
 
     private void InitializeGameObject()
     {
-        hero = new Hero(texture);
+        hero = new Hero(texture, new KeyboardReader());
     }
 
     protected override void Update(GameTime gameTime)
@@ -51,7 +54,7 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
-        hero.Update();
+        hero.Update(gameTime);
         base.Update(gameTime);
     }
 
@@ -61,6 +64,10 @@ public class Game1 : Game
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
+        
+        _spriteBatch.Draw(backgroundTexture,
+               new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
+               Color.White);
         hero.Draw(_spriteBatch);
         _spriteBatch.End();
 
