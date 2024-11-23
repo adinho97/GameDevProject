@@ -19,24 +19,24 @@ namespace GameDevProject.Input
             KeyboardState state = Keyboard.GetState();
 
             // Check for left and right movement
-            if (state.IsKeyDown(Keys.Left))
+            if (state.IsKeyDown(Keys.Left) || state.IsKeyDown(Keys.A))
             {
                 direction.X = -1;
                 directionString = "left";
             }
-            else if (state.IsKeyDown(Keys.Right))
+            else if (state.IsKeyDown(Keys.Right)|| state.IsKeyDown(Keys.D))
             {
                 direction.X = 1;
                 directionString = "right";
             }
 
             // Check for up and down movement
-            if (state.IsKeyDown(Keys.Up))
+            if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {
                 direction.Y = -1;
                 directionString = "up"; // Override with "up" if both are pressed
             }
-            else if (state.IsKeyDown(Keys.Down))
+            else if (state.IsKeyDown(Keys.Down) || state.IsKeyDown(Keys.S))
             {
                 direction.Y = 1;
                 directionString = "down"; // Override with "down" if both are pressed

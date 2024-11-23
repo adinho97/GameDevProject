@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ using Vector2 = Microsoft.Xna.Framework.Vector2;
 namespace GameDevProject.Characters
 {
 
-    public class Hero : IGameObject
+    public class Hero : IGameObject, ICollidable
     {
         Texture2D heroTexture;
         Animation animation;
@@ -24,6 +25,12 @@ namespace GameDevProject.Characters
         IInputReader inputReader;
 
         private string currentDirection = "right"; // Default direction set to "right"
+
+        public Vector2 Position 
+        {
+            get { return position; }
+            set { position = value; }
+        }
 
         public Hero(Texture2D texture, IInputReader reader)
         {
@@ -88,6 +95,21 @@ namespace GameDevProject.Characters
                 SpriteEffects.None,    // No flipping
                 0f                     // Layer depth
             );
+        }
+
+        public Rectangle GetBorder()
+        {
+            return new Rectangle(
+            (int)position.X,
+            (int)position.Y,
+            animation.CurrentFrame.SourceRectangle.Width * 2, // Account for scaling
+            animation.CurrentFrame.SourceRectangle.Height * 2
+        );
+        }
+
+        public void setBorder(Rectangle border)
+        {
+            position = new Vector2(border.X, border.Y);
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using GameDevProject.Characters;
+using GameDevProject.Collisions;
 using GameDevProject.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,8 +15,9 @@ public class Game1 : Game
 
     private Texture2D texture;
     private Texture2D backgroundTexture;
-    Hero hero;
-    
+    private Hero hero;
+
+    private BorderCollision borderCollision;
 
     public Game1()
     {
@@ -30,6 +32,8 @@ public class Game1 : Game
 
         
         base.Initialize();
+        var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+        borderCollision = new BorderCollision(border);
     }
 
     protected override void LoadContent()
@@ -40,6 +44,11 @@ public class Game1 : Game
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
 
         InitializeGameObject();
+
+        // Define the screen or background boundary
+        var screenBorder = new Rectangle(0, 0, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+
+        borderCollision = new BorderCollision(screenBorder);
         // TODO: use this.Content to load your game content here
     }
 
@@ -55,6 +64,8 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         hero.Update(gameTime);
+        // Enforce collision constraints
+        borderCollision.Constrain(hero);
         base.Update(gameTime);
     }
 

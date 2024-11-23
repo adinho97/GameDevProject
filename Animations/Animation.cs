@@ -19,14 +19,13 @@ namespace GameDevProject.Animations
 
         public Animation() 
         {
-            //frames = new List<AnimationFrame>();
+            
             framesByDirection = new Dictionary<string, List<AnimationFrame>>();
         }
         
         public void AddFrame(string direction, AnimationFrame animationFrame)
         {
-            //frames.Add(animationFrame);
-            //CurrentFrame = frames[0];
+          
             if (!framesByDirection.ContainsKey(direction))
                 framesByDirection[direction] = new List<AnimationFrame>();
 
@@ -75,18 +74,7 @@ namespace GameDevProject.Animations
 
         public void Update(GameTime gameTime)
         {
-            //CurrentFrame = frames[counter];
-
-            //frameMovement += CurrentFrame.SourceRectangle.Width * gameTime.ElapsedGameTime.TotalSeconds;
-            //if(frameMovement >= CurrentFrame.SourceRectangle.Width/5) //speed mutliplied by divison
-            //{
-            //   counter++;
-            //  frameMovement = 0;
-            //}
-
-
-            //if(counter >= frames.Count)
-            //  counter = 0;    
+            
             if (currentFrames == null || currentFrames.Count == 0)
                 return;
 
