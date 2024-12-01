@@ -25,7 +25,7 @@
 /processorParam:TextureFormat=Color
 /build:backgroundSand.jpg
 
-#begin ichigoSprite.png
+#begin menosGrande.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -35,7 +35,19 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ichigoSprite.png
+/build:menosGrande.png
+
+#begin SinglehollowCero.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SinglehollowCero.png
 
 #begin tinyIchigo.png
 /importer:TextureImporter

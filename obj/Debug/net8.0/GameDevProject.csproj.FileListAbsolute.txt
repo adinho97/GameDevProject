@@ -24,6 +24,7 @@ C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\Gam
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\obj\Debug\net8.0\GameDevProject.pdb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\obj\Debug\net8.0\GameDevProject.genruntimeconfig.cache
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\obj\Debug\net8.0\ref\GameDevProject.dll
-C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\ichigoSprite.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\backgroundSand.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\tinyIchigo.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\MenosGrande.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\SinglehollowCero.xnb

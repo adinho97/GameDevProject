@@ -1,10 +1,12 @@
 ﻿using GameDevProject.Characters;
 using GameDevProject.Collisions;
 using GameDevProject.Input;
+using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Collections.Generic;
 
 namespace GameDevProject;
 
@@ -13,10 +15,13 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    private Texture2D texture;
+    private Texture2D HeroTexture;
     private Texture2D backgroundTexture;
+    private Texture2D enemyTexture;
+    private Texture2D projectileTexture; // add pro tex
     private Hero hero;
 
+    private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
 
     public Game1()
@@ -40,8 +45,11 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        texture = Content.Load<Texture2D>("tinyIchigo");
+        
+        HeroTexture = Content.Load<Texture2D>("tinyIchigo");
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
+        projectileTexture = Content.Load<Texture2D>("SinglehollowCero");
+
 
         InitializeGameObject();
 
@@ -54,7 +62,8 @@ public class Game1 : Game
 
     private void InitializeGameObject()
     {
-        hero = new Hero(texture, new KeyboardReader());
+       
+        hero = new Hero(HeroTexture, new KeyboardReader());
     }
 
     protected override void Update(GameTime gameTime)
@@ -63,7 +72,17 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
-        hero.Update(gameTime);
+        hero.Update(gameTime, projectiles, projectileTexture); //add
+
+        //add
+        foreach (var projectile in projectiles)
+        {
+            projectile.Update(gameTime);
+        }
+
+        //add
+        projectiles.RemoveAll(p => !p.IsActive);
+    
         // Enforce collision constraints
         borderCollision.Constrain(hero);
         base.Update(gameTime);
@@ -80,6 +99,12 @@ public class Game1 : Game
                new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
                Color.White);
         hero.Draw(_spriteBatch);
+
+        // Draw projectiles
+        foreach (var projectile in projectiles)
+        {
+            projectile.Draw(_spriteBatch);
+        }
         _spriteBatch.End();
 
         base.Draw(gameTime);

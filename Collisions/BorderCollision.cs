@@ -19,23 +19,7 @@ namespace GameDevProject.Collisions
             this.border = border;
         }
 
-        /*
-        public Vector2 KeepInsideBorder(Vector2 position, Rectangle playerCollider)
-        {
-            //check collision
-            if (position.X < border.Left)
-                position.X = border.Left;
-            if (position.Y < border.Top)
-                position.Y = border.Top;
-            if(position.X + playerCollider.Width > border.Right)
-                position.X = border.Right - playerCollider.Width;
-            if(position.Y + playerCollider.Height > border.Bottom)
-                position.Y = border.Bottom - playerCollider.Height;
-
-            return position;
-
-        }
-        */
+ 
         public void Constrain(ICollidable collidable)
         {
             var bounds = collidable.GetBorder();

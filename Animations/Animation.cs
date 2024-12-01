@@ -31,45 +31,45 @@ namespace GameDevProject.Animations
 
             framesByDirection[direction].Add(animationFrame);
 
-            // Default to the first direction added
+           
             if (currentFrames == null)
                 currentFrames = framesByDirection[direction];
         }
 
         public void SetDirection(string directionString)
         {
-            currentFrames.Clear(); // Clear previous direction frames
+            currentFrames.Clear(); 
 
-            int columnIndex = 0; // Default to "up"
+            int columnIndex = 0; 
 
             // Map directionString to column index
             switch (directionString)
             {
                 case "up":
-                    columnIndex = 0; // First column
+                    columnIndex = 0; 
                     break;
                 case "right":
-                    columnIndex = 1; // Second column
+                    columnIndex = 1; 
                     break;
                 case "down":
-                    columnIndex = 2; // Third column
+                    columnIndex = 2; 
                     break;
                 case "left":
-                    columnIndex = 3; // Fourth column
+                    columnIndex = 3; 
                     break;
             }
 
-            // Assuming each sprite frame is uniform in size
-            int frameWidth = 32;  // Width of one frame in pixels
-            int frameHeight = 32; // Height of one frame in pixels
+           
+            int frameWidth = 32;  
+            int frameHeight = 32; 
 
-            // Add all frames for this direction (one column)
-            for (int i = 0; i < 4; i++) // Assuming 4 rows of frames per column
+          
+            for (int i = 0; i < 4; i++)
             {
                 currentFrames.Add(new AnimationFrame(new Rectangle(columnIndex * frameWidth, i * frameHeight, frameWidth, frameHeight)));
             }
 
-            counter = 0; // Reset animation frame index
+            counter = 0;
         }
 
         public void Update(GameTime gameTime)

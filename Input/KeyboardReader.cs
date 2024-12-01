@@ -14,11 +14,10 @@ namespace GameDevProject.Input
         public (Vector2 direction, string directionString) ReadInput()
         {
             var direction = Vector2.Zero;
-            string directionString = "down"; // Default direction
+            string directionString = "down"; 
 
             KeyboardState state = Keyboard.GetState();
 
-            // Check for left and right movement
             if (state.IsKeyDown(Keys.Left) || state.IsKeyDown(Keys.A))
             {
                 direction.X = -1;
@@ -29,20 +28,24 @@ namespace GameDevProject.Input
                 direction.X = 1;
                 directionString = "right";
             }
-
-            // Check for up and down movement
-            if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
+            else if (state.IsKeyDown(Keys.Up) || state.IsKeyDown(Keys.W))
             {
                 direction.Y = -1;
-                directionString = "up"; // Override with "up" if both are pressed
+                directionString = "up"; 
             }
             else if (state.IsKeyDown(Keys.Down) || state.IsKeyDown(Keys.S))
             {
                 direction.Y = 1;
-                directionString = "down"; // Override with "down" if both are pressed
+                directionString = "down"; 
             }
 
             return (direction, directionString);
+        }
+
+        public bool IsShooting()
+        {
+            KeyboardState state = Keyboard.GetState();
+            return state.IsKeyDown(Keys.Space);
         }
     }
 
