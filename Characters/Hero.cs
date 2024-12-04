@@ -88,10 +88,14 @@ namespace GameDevProject.Characters
             // Move the character if there's input
             if (direction != Vector2.Zero)
             {
-                position += direction * 2f; // Adjust speed as needed
+                Vector2 newPosition = position + direction * 2f; // Adjust speed as needed
+
+                // Temporarily update position to calculate border for collision
+                Rectangle newBorder = new Rectangle((int)newPosition.X, (int)newPosition.Y, GetBorder().Width, GetBorder().Height);
+                setBorder(newBorder); // Temporarily update the border to check collision
+
                 currentDirection = directionString;
             }
-
             // Update the animation based on the current direction
             animation.SetDirection(currentDirection);
             animation.Update(gameTime);

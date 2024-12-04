@@ -24,6 +24,8 @@ public class Game1 : Game
 
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
+    private List<ICollidable> collidables;
+
 
     public Game1()
     {
@@ -40,6 +42,11 @@ public class Game1 : Game
         base.Initialize();
         var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         borderCollision = new BorderCollision(border);
+        collidables = new List<ICollidable>();
+        collidables.Add(hero);
+        collidables.Add(enemy);
+
+
     }
 
     protected override void LoadContent()
@@ -76,6 +83,9 @@ public class Game1 : Game
         // TODO: Add your update logic here
         hero.Update(gameTime, projectiles, projectileTexture); //add
         enemy.Update(gameTime);
+
+        
+        CollisionManager.HandleCollisions(hero, collidables);
 
         //add
         foreach (var projectile in projectiles)
