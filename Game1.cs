@@ -20,6 +20,7 @@ public class Game1 : Game
     private Texture2D enemyTexture;
     private Texture2D projectileTexture; // add pro tex
     private Hero hero;
+    private Enemy enemy;
 
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
@@ -45,7 +46,7 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        
+        enemyTexture = Content.Load<Texture2D>("menosGrande");
         HeroTexture = Content.Load<Texture2D>("tinyIchigo");
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
         projectileTexture = Content.Load<Texture2D>("SinglehollowCero");
@@ -64,6 +65,7 @@ public class Game1 : Game
     {
        
         hero = new Hero(HeroTexture, new KeyboardReader());
+        enemy = new Enemy(enemyTexture, new Vector2(340, 200));
     }
 
     protected override void Update(GameTime gameTime)
@@ -73,6 +75,7 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         hero.Update(gameTime, projectiles, projectileTexture); //add
+        enemy.Update(gameTime);
 
         //add
         foreach (var projectile in projectiles)
@@ -99,6 +102,7 @@ public class Game1 : Game
                new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
                Color.White);
         hero.Draw(_spriteBatch);
+        enemy.Draw(_spriteBatch);
 
         // Draw projectiles
         foreach (var projectile in projectiles)
