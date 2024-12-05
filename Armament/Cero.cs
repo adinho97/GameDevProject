@@ -47,7 +47,9 @@ namespace GameDevProject.Armament
         {
             if (IsActive)
             {
-                spriteBatch.Draw(texture, Position, Color.White);
+                Vector2 scale = new Vector2(0.5f, 0.5f); 
+                spriteBatch.Draw(texture, Position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             }
         }
 
