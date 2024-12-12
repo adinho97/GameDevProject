@@ -34,6 +34,9 @@ namespace GameDevProject.Animations
            
             if (currentFrames == null)
                 currentFrames = framesByDirection[direction];
+
+            if (CurrentFrame == null)
+                CurrentFrame = framesByDirection[direction][0];
         }
 
         public void SetDirection(string directionString)
@@ -69,7 +72,7 @@ namespace GameDevProject.Animations
                 currentFrames.Add(new AnimationFrame(new Rectangle(columnIndex * frameWidth, i * frameHeight, frameWidth, frameHeight)));
             }
 
-            counter = 0;
+            
         }
 
         public void Update(GameTime gameTime)
@@ -87,7 +90,7 @@ namespace GameDevProject.Animations
                 frameMovement = 0;
             }
 
-            if (counter >= currentFrames.Count)
+            if (counter >= currentFrames.Count - 1)
                 counter = 0;
         }
     }

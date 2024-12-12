@@ -95,10 +95,13 @@ namespace GameDevProject.Characters
                 setBorder(newBorder); // Temporarily update the border to check collision
 
                 currentDirection = directionString;
+
+                // Update the animation based on the current direction
+                // We only do this when we have a movement directipon
+                animation.SetDirection(currentDirection);
+                animation.Update(gameTime);
             }
-            // Update the animation based on the current direction
-            animation.SetDirection(currentDirection);
-            animation.Update(gameTime);
+            
 
             // Handle shooting mechanics
             var spaceKeyPressed = Keyboard.GetState().IsKeyDown(Keys.Space);
