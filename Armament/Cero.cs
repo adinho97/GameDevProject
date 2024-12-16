@@ -15,7 +15,7 @@ namespace GameDevProject.Armament
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
         private readonly Texture2D texture;
-        private float speed = 8f; // Speed of the projectile
+        private float speed = 10f; // Speed of the projectile
         public bool IsActive { get; private set; } // Proper setter for activation stat    
         // Becomes inactive when out of bounds
 
@@ -37,7 +37,7 @@ namespace GameDevProject.Armament
 
             // Deactivate when out of bounds
             if (Position.X < 0 || Position.Y < 0 ||
-                Position.X > 800 || Position.Y > 600) // Adjust bounds as needed
+                Position.X > 1920 || Position.Y > 1080) // Adjust bounds as needed
             {
                 IsActive = false;
             }
@@ -48,7 +48,7 @@ namespace GameDevProject.Armament
             if (IsActive)
             {
                 Vector2 scale = new Vector2(0.5f, 0.5f); 
-                spriteBatch.Draw(texture, Position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(texture, Position, null, Color.White, -0.2f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
             }
         }

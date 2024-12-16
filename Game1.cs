@@ -40,6 +40,10 @@ public class Game1 : Game
 
         
         base.Initialize();
+        _graphics.PreferredBackBufferWidth = 1920;  // Set your desired width
+        _graphics.PreferredBackBufferHeight = 1080; // Set your desired height
+        _graphics.IsFullScreen = true;
+        _graphics.ApplyChanges();
         var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         borderCollision = new BorderCollision(border);
         collidables = new List<ICollidable>();

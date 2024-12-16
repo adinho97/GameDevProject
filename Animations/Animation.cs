@@ -84,7 +84,7 @@ namespace GameDevProject.Animations
             CurrentFrame = currentFrames[counter];
 
             frameMovement += gameTime.ElapsedGameTime.TotalSeconds;
-            if (frameMovement >= 0.2) // Adjust animation speed as needed
+            if (frameMovement >= 0.15) // Adjust animation speed as needed
             {
                 counter++;
                 frameMovement = 0;

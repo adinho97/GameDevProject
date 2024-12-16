@@ -123,7 +123,7 @@ namespace GameDevProject.Characters
                 Color.White,
                 0f, // No rotation
                 Vector2.Zero, // Origin at the top-left
-                1.5f, // Scale (adjust if needed)
+                2f, // Scale (adjust if needed)
                 SpriteEffects.None,
                 0f // Layer depth
             );
