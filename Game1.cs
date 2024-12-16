@@ -21,6 +21,9 @@ public class Game1 : Game
     private Texture2D projectileTexture; // add pro tex
     private Hero hero;
     private Enemy enemy;
+    private List<Enemy> enemies;
+    private float spawnTimer;
+    private float spawnInterval;
 
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
@@ -44,6 +47,9 @@ public class Game1 : Game
         _graphics.PreferredBackBufferHeight = 1080; // Set your desired height
         _graphics.IsFullScreen = true;
         _graphics.ApplyChanges();
+        enemies = new List<Enemy>();
+        spawnTimer = 0;
+        spawnInterval = 3000f;
         var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         borderCollision = new BorderCollision(border);
         collidables = new List<ICollidable>();
@@ -78,6 +84,18 @@ public class Game1 : Game
         hero = new Hero(HeroTexture, new KeyboardReader());
         enemy = new Enemy(enemyTexture, new Vector2(800, 500));
     }
+    private void SpawnEnemy()
+    {
+        Random random = new Random();
+
+        int x = random.Next(100, _graphics.PreferredBackBufferWidth - 100);
+        int y = random.Next(100, _graphics.PreferredBackBufferHeight - 100);
+
+        var newEnemy = new Enemy(enemyTexture, new Vector2(x, y));
+        enemies.Add(newEnemy);
+
+        collidables.Add(newEnemy); 
+    }
 
     protected override void Update(GameTime gameTime)
     {
@@ -90,6 +108,20 @@ public class Game1 : Game
 
         
         CollisionManager.HandleCollisions(hero, collidables);
+
+        foreach(var enemy in enemies)
+        {
+            enemy.Update(gameTime, hero.Position);
+        }
+
+
+        //timer voor spawn enemies
+        spawnTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+        if(spawnTimer >= spawnInterval)
+        {
+            SpawnEnemy();
+            spawnTimer = 0f;
+        }
 
         //add
         foreach (var projectile in projectiles)
@@ -105,6 +137,8 @@ public class Game1 : Game
         base.Update(gameTime);
     }
 
+
+
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -116,7 +150,12 @@ public class Game1 : Game
                new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
                Color.White);
         hero.Draw(_spriteBatch);
-        enemy.Draw(_spriteBatch);
+        //enemy.Draw(_spriteBatch);
+
+        foreach(var enemy in enemies)
+        {
+            enemy.Draw(_spriteBatch);
+        }
 
         // Draw projectiles
         foreach (var projectile in projectiles)
