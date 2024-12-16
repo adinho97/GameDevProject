@@ -23,6 +23,7 @@ namespace GameDevProject.Characters
         private float cooldownTimer; // Cooldown duration in milliseconds
         private bool spaceKeyPressedLastFrame; // To detect shooting key press transitions
 
+
         public Vector2 Position
         {
             get { return position; }
@@ -67,6 +68,21 @@ namespace GameDevProject.Characters
             isOnCooldown = false;
             cooldownTimer = 0f;
             spaceKeyPressedLastFrame = false;
+
+        }
+
+        public Rectangle GetBorder()
+        {
+            return new Rectangle(
+                (int)position.X,
+                (int)position.Y,
+                animation.CurrentFrame.SourceRectangle.Width,
+                animation.CurrentFrame.SourceRectangle.Height
+            );
+        }
+           public void setBorder(Rectangle border)
+        {
+            position = new Vector2(border.X, border.Y);
         }
 
         public void Update(GameTime gameTime, List<IProjectile> projectiles, Texture2D projectileTexture)
@@ -88,7 +104,7 @@ namespace GameDevProject.Characters
             // Move the character if there's input
             if (direction != Vector2.Zero)
             {
-                Vector2 newPosition = position + direction * 2f; // Adjust speed as needed
+                Vector2 newPosition = position + direction * 3f; // Adjust speed as needed
 
                 // Temporarily update position to calculate border for collision
                 Rectangle newBorder = new Rectangle((int)newPosition.X, (int)newPosition.Y, GetBorder().Width, GetBorder().Height);
@@ -129,20 +145,9 @@ namespace GameDevProject.Characters
             );
         }
 
-        public Rectangle GetBorder()
-        {
-            return new Rectangle(
-                (int)position.X,
-                (int)position.Y,
-                animation.CurrentFrame.SourceRectangle.Width,
-                animation.CurrentFrame.SourceRectangle.Height
-            );
-        }
+      
 
-        public void setBorder(Rectangle border)
-        {
-            position = new Vector2(border.X, border.Y);
-        }
+     
 
         public void Shoot(List<IProjectile> projectiles, Texture2D projectileTexture)
         {
