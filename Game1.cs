@@ -57,7 +57,7 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        enemyTexture = Content.Load<Texture2D>("menosGrande");
+        enemyTexture = Content.Load<Texture2D>("snakeSprite");
         HeroTexture = Content.Load<Texture2D>("tinyIchigo");
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
         projectileTexture = Content.Load<Texture2D>("SinglehollowCero");
@@ -76,7 +76,7 @@ public class Game1 : Game
     {
        
         hero = new Hero(HeroTexture, new KeyboardReader());
-        enemy = new Enemy(enemyTexture, new Vector2(340, 200));
+        enemy = new Enemy(enemyTexture, new Vector2(800, 500));
     }
 
     protected override void Update(GameTime gameTime)
@@ -86,7 +86,7 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         hero.Update(gameTime, projectiles, projectileTexture); //add
-        enemy.Update(gameTime);
+        enemy.Update(gameTime, hero.Position);
 
         
         CollisionManager.HandleCollisions(hero, collidables);

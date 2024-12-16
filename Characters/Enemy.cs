@@ -16,6 +16,7 @@ namespace GameDevProject.Characters
         private Texture2D enemyTexture;
         private Vector2 position;
         private Rectangle currentFrame;
+        private float speed = 100f;
 
         public Vector2 Position
         {
@@ -27,7 +28,7 @@ namespace GameDevProject.Characters
         {
             enemyTexture = texture;
             position = initialPosition;
-            currentFrame = new Rectangle(0,0, 73, 85);
+            currentFrame = new Rectangle(0,0, 92, 90);
         }
    
 
@@ -46,9 +47,17 @@ namespace GameDevProject.Characters
             position = new Vector2(border.X, border.Y);
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Vector2 playerPosition)
         {
-            // just standing so no animation for now
+            Vector2 direction = playerPosition - position;
+
+            if (direction != Vector2.Zero)
+                direction.Normalize();
+
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            position += direction * speed * deltaTime;
+
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -60,10 +69,15 @@ namespace GameDevProject.Characters
                 Color.White,
                 0f, // No rotation
                 Vector2.Zero, // Origin at the top-left
-                1.0f, // Scale (adjust if needed)
+                0.8f, // Scale (adjust if needed)
                 SpriteEffects.None,
                 0f // Layer depth
             );
+        }
+
+        public void Update(GameTime gameTime)
+        {
+           
         }
     }
 
