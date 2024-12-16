@@ -38,8 +38,7 @@
               "RelativeToolTip": "Interfaces\\IGameObject.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T20:37:14.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T20:37:14.665Z"
             },
             {
               "$type": "Document",
@@ -47,9 +46,9 @@
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs",
               "RelativeDocumentMoniker": "Characters\\Enemy.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs*",
-              "RelativeToolTip": "Characters\\Enemy.cs*",
-              "ViewState": "AgIAABQAAAAAAAAAAAAxwDsAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs",
+              "RelativeToolTip": "Characters\\Enemy.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwFUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T20:02:46.439Z",
               "EditorCaption": ""
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Game1.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAwwFgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T16:34:50.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T16:34:50.756Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Characters\\Hero.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T16:34:41.248Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T16:34:41.248Z"
             }
           ]
         }

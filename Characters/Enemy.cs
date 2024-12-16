@@ -17,6 +17,7 @@ namespace GameDevProject.Characters
         private Vector2 position;
         private Rectangle currentFrame;
         private float speed = 100f;
+        private SpriteEffects spriteEffects; // Added for flipping the sprite
 
         public Vector2 Position
         {
@@ -29,6 +30,7 @@ namespace GameDevProject.Characters
             enemyTexture = texture;
             position = initialPosition;
             currentFrame = new Rectangle(0,0, 92, 90);
+            spriteEffects = SpriteEffects.None;
         }
    
 
@@ -57,7 +59,15 @@ namespace GameDevProject.Characters
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             position += direction * speed * deltaTime;
 
-
+            // Flip the sprite based on movement direction
+            if (direction.X > 0)
+            {
+                spriteEffects = SpriteEffects.None; // Facing right
+            }
+            else if (direction.X < 0)
+            {
+                spriteEffects = SpriteEffects.FlipHorizontally; // Facing left
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -70,7 +80,7 @@ namespace GameDevProject.Characters
                 0f, // No rotation
                 Vector2.Zero, // Origin at the top-left
                 0.8f, // Scale (adjust if needed)
-                SpriteEffects.None,
+                spriteEffects,
                 0f // Layer depth
             );
         }
