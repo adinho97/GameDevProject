@@ -16,7 +16,7 @@ namespace GameDevProject.Characters
         private Texture2D enemyTexture;
         private Vector2 position;
         private Rectangle currentFrame;
-        private float speed = 100f;
+        private float speed = 60f;
         private SpriteEffects spriteEffects; // Added for flipping the sprite
 
         public Vector2 Position

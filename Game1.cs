@@ -88,10 +88,32 @@ public class Game1 : Game
     {
         Random random = new Random();
 
-        int x = random.Next(100, _graphics.PreferredBackBufferWidth - 100);
-        int y = random.Next(100, _graphics.PreferredBackBufferHeight - 100);
+        //viewport details so the enemies spawn outside of reach / no glitchy hitbox
+        int screenWidth = _graphics.PreferredBackBufferWidth;
+        int screenHeight = _graphics.PreferredBackBufferHeight;
 
-        var newEnemy = new Enemy(enemyTexture, new Vector2(x, y));
+        //choose a random viewport side
+        int side = random.Next(0, 4);
+
+        Vector2 spawnPosition = Vector2.Zero;
+
+        switch (side)
+        {
+            case 0: //above screen
+                spawnPosition = new Vector2(random.Next(0, screenWidth), - 100); 
+                break;
+            case 1: // right
+                spawnPosition = new Vector2(screenWidth + 100, random.Next(0, screenHeight));
+                break;
+            case 2: // under
+                spawnPosition = new Vector2(random.Next(0, screenWidth), screenHeight + 100);
+                break;
+            case 3: // left
+                spawnPosition = new Vector2(-100, random.Next(0, screenHeight));
+                break;
+        }
+
+        var newEnemy = new Enemy(enemyTexture, spawnPosition);
         enemies.Add(newEnemy);
 
         collidables.Add(newEnemy); 
