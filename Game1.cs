@@ -24,6 +24,8 @@ public class Game1 : Game
     private List<Enemy> enemies;
     private float spawnTimer;
     private float spawnInterval;
+    private int playerScore;
+    private SpriteFont scoreFont;
 
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
@@ -67,6 +69,7 @@ public class Game1 : Game
         HeroTexture = Content.Load<Texture2D>("tinyIchigo");
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
         projectileTexture = Content.Load<Texture2D>("SinglehollowCero");
+        //scoreFont = Content.Load<SpriteFont>("ScoreFont");
 
 
         InitializeGameObject();
@@ -84,6 +87,7 @@ public class Game1 : Game
         hero = new Hero(HeroTexture, new KeyboardReader());
         enemy = new Enemy(enemyTexture, new Vector2(800, 500));
     }
+
     private void SpawnEnemy()
     {
         Random random = new Random();
@@ -96,6 +100,8 @@ public class Game1 : Game
         int side = random.Next(0, 4);
 
         Vector2 spawnPosition = Vector2.Zero;
+        bool validPosition = false;
+        float minDistanceFromPlayer = 250f;
 
         switch (side)
         {
@@ -119,6 +125,7 @@ public class Game1 : Game
         collidables.Add(newEnemy); 
     }
 
+
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -126,8 +133,6 @@ public class Game1 : Game
 
         // TODO: Add your update logic here
         hero.Update(gameTime, projectiles, projectileTexture); //add
-        enemy.Update(gameTime, hero.Position);
-
         
         CollisionManager.HandleCollisions(hero, collidables);
 
@@ -149,6 +154,27 @@ public class Game1 : Game
         foreach (var projectile in projectiles)
         {
             projectile.Update(gameTime);
+        }
+
+        //detect bullet collision w enemies
+        for (int i = enemies.Count - 1; i >= 0; i--) 
+        {
+            var enemy = enemies[i];
+            Rectangle enemyHitbox = enemy.GetBorder();
+
+            for (int j = projectiles.Count - 1; j >= 0; j--) 
+            {
+                var projectile = projectiles[j];
+                Rectangle projectileHitbox = projectile.GetBorder();
+
+                if (enemyHitbox.Intersects(projectileHitbox))
+                {
+                    //enemy is hit
+                    enemies.RemoveAt(i);
+                    projectiles.RemoveAt(j);
+                    break;
+                }
+            }
         }
 
         //add

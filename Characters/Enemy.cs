@@ -34,6 +34,7 @@ namespace GameDevProject.Characters
         }
    
 
+        //serves as hitbox
         public Rectangle GetBorder()
         {
             return new Rectangle(
