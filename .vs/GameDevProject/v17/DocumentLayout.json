@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\armament\\cero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:armament\\cero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\interfaces\\iprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:interfaces\\iprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\interfaces\\igameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:interfaces\\igameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +34,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
+              "RelativeDocumentMoniker": "Game1.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
+              "RelativeToolTip": "Game1.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAkwNUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:57:01.543Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGameObject.cs",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Interfaces\\IGameObject.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IGameObject.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Interfaces\\IGameObject.cs",
+              "RelativeToolTip": "Interfaces\\IGameObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T14:20:05.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Interfaces\\IProjectile.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IProjectile.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Interfaces\\IProjectile.cs",
+              "RelativeToolTip": "Interfaces\\IProjectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T14:13:55.404Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -36,7 +84,7 @@
               "RelativeDocumentMoniker": "Armament\\Cero.cs",
               "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Armament\\Cero.cs",
               "RelativeToolTip": "Armament\\Cero.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowDcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T00:38:23.534Z",
               "EditorCaption": ""
@@ -44,39 +92,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
-              "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAmwKsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T22:57:01.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs",
               "RelativeDocumentMoniker": "Characters\\Enemy.cs",
               "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs",
               "RelativeToolTip": "Characters\\Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAcwFIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T20:02:46.439Z"
+              "WhenOpened": "2024-12-16T20:02:46.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Hero.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Hero.cs",
               "RelativeDocumentMoniker": "Characters\\Hero.cs",
               "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Hero.cs",
               "RelativeToolTip": "Characters\\Hero.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBcAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T16:34:41.248Z"
+              "WhenOpened": "2024-12-04T16:34:41.248Z",
+              "EditorCaption": ""
             }
           ]
         }

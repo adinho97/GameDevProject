@@ -32,18 +32,23 @@ namespace GameDevProject.Characters
             currentFrame = new Rectangle(0,0, 92, 90);
             spriteEffects = SpriteEffects.None;
         }
-   
 
-        //serves as hitbox
+
+        //serves as hitbox, reduces to scale 0.5
         public Rectangle GetBorder()
         {
+            int newWidth = currentFrame.Width / 2; // Half the original width
+            int newHeight = currentFrame.Height / 2; // Half the original height
+
             return new Rectangle(
-              (int)position.X,
-              (int)position.Y,
-              currentFrame.Width,
-              currentFrame.Height
-          );
+                (int)(position.X + (currentFrame.Width - newWidth) / 2), // Center horizontally
+                (int)(position.Y + (currentFrame.Height - newHeight) / 2), // Center vertically
+                newWidth,
+                newHeight
+            );
         }
+ 
+
 
         public void setBorder(Rectangle border)
         {
@@ -71,7 +76,7 @@ namespace GameDevProject.Characters
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Texture2D debugTexture)
         {
             spriteBatch.Draw(
                 enemyTexture,
@@ -84,11 +89,23 @@ namespace GameDevProject.Characters
                 spriteEffects,
                 0f // Layer depth
             );
+
+            // Teken de hitbox met een rode rechthoek
+            var border = GetBorder();
+            spriteBatch.Draw(debugTexture, new Rectangle(border.X, border.Y, border.Width, 2), Color.Red); // Bovenrand
+            spriteBatch.Draw(debugTexture, new Rectangle(border.X, border.Y + border.Height - 2, border.Width, 2), Color.Red); // Onderkant
+            spriteBatch.Draw(debugTexture, new Rectangle(border.X, border.Y, 2, border.Height), Color.Red); // Linkerkant
+            spriteBatch.Draw(debugTexture, new Rectangle(border.X + border.Width - 2, border.Y, 2, border.Height), Color.Red); // Rechterkant
         }
 
         public void Update(GameTime gameTime)
         {
            
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            
         }
     }
 

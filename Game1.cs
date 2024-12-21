@@ -15,6 +15,8 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
+    private Texture2D debugTexture;
+
     private Texture2D HeroTexture;
     private Texture2D backgroundTexture;
     private Texture2D enemyTexture;
@@ -64,7 +66,8 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+        debugTexture = new Texture2D(GraphicsDevice, 1, 1); 
+        debugTexture.SetData(new[] { Color.White });
         enemyTexture = Content.Load<Texture2D>("snakeSprite");
         HeroTexture = Content.Load<Texture2D>("tinyIchigo");
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
@@ -202,7 +205,7 @@ public class Game1 : Game
 
         foreach(var enemy in enemies)
         {
-            enemy.Draw(_spriteBatch);
+            enemy.Draw(_spriteBatch, debugTexture);
         }
 
         // Draw projectiles

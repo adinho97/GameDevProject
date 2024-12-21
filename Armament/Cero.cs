@@ -43,21 +43,32 @@ namespace GameDevProject.Armament
             }
         }
 
+
+        public Rectangle GetBorder()
+        {
+            int reductionX = texture.Width / 4; // Reduce width by 1/4
+            int reductionY = texture.Height / 4; // Reduce height by 1/4
+
+            return new Rectangle(
+                (int)Position.X + reductionX / 2, // Offset by half the reduction
+                (int)Position.Y + reductionY / 2, // Offset by half the reduction
+                texture.Width - reductionX, // New reduced width
+                texture.Height - reductionY);// New reduced height
+
+            //return new Rectangle((int)Position.X, (int)Position.Y, texture.Width, texture.Height);
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             if (IsActive)
             {
-                Vector2 scale = new Vector2(0.5f, 0.5f); 
+                Vector2 scale = new Vector2(0.3f, 0.4f);
                 spriteBatch.Draw(texture, Position, null, Color.White, -0.2f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
+
 
             }
         }
 
-        public Rectangle GetBorder()
-        {
-            return new Rectangle((int)Position.X, (int)Position.Y, texture.Width, texture.Height);
-        }
     }
-
-
 }
