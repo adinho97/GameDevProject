@@ -21,7 +21,7 @@ namespace GameDevProject.Characters
 
         private bool isOnCooldown;
         private float cooldownTimer; // Cooldown duration in milliseconds
-        private bool spaceKeyPressedLastFrame; // To detect shooting key press transitions
+        private bool leftClickLastFrame; // To detect shooting key press transitions
 
 
         public Vector2 Position
@@ -67,7 +67,7 @@ namespace GameDevProject.Characters
             // Initialize shooting mechanics
             isOnCooldown = false;
             cooldownTimer = 0f;
-            spaceKeyPressedLastFrame = false;
+            leftClickLastFrame = false;
 
         }
 
@@ -117,17 +117,18 @@ namespace GameDevProject.Characters
                 animation.SetDirection(currentDirection);
                 animation.Update(gameTime);
             }
-            
+
 
             // Handle shooting mechanics
-            var spaceKeyPressed = Keyboard.GetState().IsKeyDown(Keys.Space);
+            var leftMouseButtonPressed = Mouse.GetState().LeftButton == ButtonState.Pressed;
 
-            if (spaceKeyPressed && !spaceKeyPressedLastFrame && !isOnCooldown)
+            if (leftMouseButtonPressed && !leftClickLastFrame && !isOnCooldown)
             {
                 Shoot(projectiles, projectileTexture);
             }
 
-            spaceKeyPressedLastFrame = spaceKeyPressed;
+            // Update the previous frame state
+            leftClickLastFrame = leftMouseButtonPressed;
         }
 
         public void Draw(SpriteBatch spriteBatch)

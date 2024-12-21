@@ -2,6 +2,7 @@
 using GameDevProject.Collisions;
 using GameDevProject.Input;
 using GameDevProject.Interfaces;
+using GameDevProject.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -32,6 +33,7 @@ public class Game1 : Game
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
     private List<ICollidable> collidables;
+    private UIManager uiManager;
 
 
     public Game1()
@@ -47,6 +49,7 @@ public class Game1 : Game
 
         
         base.Initialize();
+        
         _graphics.PreferredBackBufferWidth = 1920;  // Set your desired width
         _graphics.PreferredBackBufferHeight = 1080; // Set your desired height
         _graphics.IsFullScreen = true;
@@ -73,7 +76,8 @@ public class Game1 : Game
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
         projectileTexture = Content.Load<Texture2D>("SinglehollowCero");
         //scoreFont = Content.Load<SpriteFont>("ScoreFont");
-
+        uiManager = new UIManager();
+        uiManager.LoadContent(Content);
 
         InitializeGameObject();
 
@@ -134,10 +138,16 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
+        if (uiManager.IsStartScreenActive()) // Check if the start screen is active
+        {
+            uiManager.Update(gameTime); // Update the start screen logic (e.g., detect spacebar press)
+            return; // Don't update the game objects until space is pressed
+        }
+
         // TODO: Add your update logic here
         hero.Update(gameTime, projectiles, projectileTexture); //add
         
-        CollisionManager.HandleCollisions(hero, collidables);
+        Managers.CollisionManager.HandleCollisions(hero, collidables);
 
         foreach(var enemy in enemies)
         {
@@ -196,22 +206,26 @@ public class Game1 : Game
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
-        
-        _spriteBatch.Draw(backgroundTexture,
+        // Draw the start screen if it's active
+        uiManager.Draw(_spriteBatch);
+        if (!uiManager.IsStartScreenActive())
+        {
+            _spriteBatch.Draw(backgroundTexture,
                new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
                Color.White);
-        hero.Draw(_spriteBatch);
-        //enemy.Draw(_spriteBatch);
+            hero.Draw(_spriteBatch);
+            //enemy.Draw(_spriteBatch);
 
-        foreach(var enemy in enemies)
-        {
-            enemy.Draw(_spriteBatch, debugTexture);
-        }
+            foreach (var enemy in enemies)
+            {
+                enemy.Draw(_spriteBatch, debugTexture);
+            }
 
-        // Draw projectiles
-        foreach (var projectile in projectiles)
-        {
-            projectile.Draw(_spriteBatch);
+            // Draw projectiles
+            foreach (var projectile in projectiles)
+            {
+                projectile.Draw(_spriteBatch);
+            }
         }
         _spriteBatch.End();
 

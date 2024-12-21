@@ -32,3 +32,4 @@ C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\Gam
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreenBackground.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\IchigoSelfSprite.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\snakeSprite.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreen.xnb
