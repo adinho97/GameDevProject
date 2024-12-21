@@ -153,8 +153,6 @@ public class Game1 : Game
         {
             enemy.Update(gameTime, hero.Position);
         }
-
-
         //timer voor spawn enemies
         spawnTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
         if(spawnTimer >= spawnInterval)
@@ -162,13 +160,11 @@ public class Game1 : Game
             SpawnEnemy();
             spawnTimer = 0f;
         }
-
         //add
         foreach (var projectile in projectiles)
         {
             projectile.Update(gameTime);
         }
-
         //detect bullet collision w enemies
         for (int i = enemies.Count - 1; i >= 0; i--) 
         {

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,25 +16,52 @@ namespace GameDevProject.Managers
         private Texture2D startScreenTexture;
         private bool isStartScreenActive;
 
+        private Song startScreenMusic;
+        private Song inGameMusic;
+        private bool isMusicPlaying;
         public UIManager()
         {
-            isStartScreenActive = true; // Initially show the start screen
+            isStartScreenActive = true;
+            isMusicPlaying = false;
         }
 
 
         public void LoadContent(ContentManager content)
         {
-            startScreenTexture = content.Load<Texture2D>("startScreen"); 
+            startScreenTexture = content.Load<Texture2D>("startScreen");
+            startScreenMusic = content.Load<Song>("startScreenTrack");
+            inGameMusic = content.Load<Song>("inGameTrack");
         }
 
+        private void SwitchToInGameMusic()
+        {
+            MediaPlayer.Stop();
+            MediaPlayer.Volume = 0.1f;
+            MediaPlayer.Play(inGameMusic);
+            isMusicPlaying = true;
+        }
 
         public void Update(GameTime gameTime)
         {
-            if (isStartScreenActive && Keyboard.GetState().IsKeyDown(Keys.Space))
+            if(isStartScreenActive)
             {
-                // Transition to the gameplay screen
-                isStartScreenActive = false;
+                if (!isMusicPlaying)
+                {
+                    MediaPlayer.IsRepeating = true;
+                    MediaPlayer.Volume = 0.1f;
+                    MediaPlayer.Play(startScreenMusic);
+                    isMusicPlaying = true;
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                {
+                    // Transition to the gameplay screen
+                    isStartScreenActive = false;
+                    SwitchToInGameMusic();
+
+                }
             }
+          
         }
 
 

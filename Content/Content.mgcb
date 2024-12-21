@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:backgroundSand.jpg
 
+#begin inGameTrack.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:inGameTrack.mp3
+
 #begin menosGrande.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -72,6 +78,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:startScreen.png
+
+#begin startScreenTrack.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:startScreenTrack.mp3
 
 #begin tinyIchigo.png
 /importer:TextureImporter

@@ -33,3 +33,7 @@ C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\Gam
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\IchigoSelfSprite.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\snakeSprite.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreen.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreenTrack.ogg
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreenTrack.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\inGameTrack.ogg
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\inGameTrack.xnb
