@@ -9,7 +9,6 @@ namespace GameDevProject.Interfaces
 {
     public interface IMovementBehaviour
     {
-        void SetAcceleration(Vector2 newAcceleration);
         Vector2 Update(Vector2 currentPosition, GameTime gameTime);
     }
 }
