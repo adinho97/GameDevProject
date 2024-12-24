@@ -27,8 +27,8 @@ public class Game1 : Game
     private List<Enemy> enemies;
     private float spawnTimer;
     private float spawnInterval;
-    private int playerScore;
-    private SpriteFont scoreFont;
+    private SpriteFont font;
+    private int score = 0;
 
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
@@ -86,6 +86,7 @@ public class Game1 : Game
 
         borderCollision = new BorderCollision(screenBorder);
         // TODO: use this.Content to load your game content here
+        font = Content.Load<SpriteFont>("fantasyFont");
     }
 
     private void InitializeGameObject()
@@ -97,7 +98,7 @@ public class Game1 : Game
 
     private void SpawnEnemy()
     {
-        Random random = new Random();
+        Random random = new();
 
         //viewport details so the enemies spawn outside of reach / no glitchy hitbox
         int screenWidth = _graphics.PreferredBackBufferWidth;
@@ -107,8 +108,8 @@ public class Game1 : Game
         int side = random.Next(0, 4);
 
         Vector2 spawnPosition = Vector2.Zero;
-        bool validPosition = false;
-        float minDistanceFromPlayer = 250f;
+        //bool validPosition = false;
+        //float minDistanceFromPlayer = 250f;
 
         switch (side)
         {
@@ -180,6 +181,7 @@ public class Game1 : Game
                 {
                     //enemy is hit
                     enemies.RemoveAt(i);
+                    score += 10;
                     projectiles.RemoveAt(j);
                     break;
                 }
@@ -210,7 +212,7 @@ public class Game1 : Game
                new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
                Color.White);
             hero.Draw(_spriteBatch);
-            //enemy.Draw(_spriteBatch);
+            _spriteBatch.DrawString(font, "SCORE: " + score, new Vector2(20,20), Color.Black);
 
             foreach (var enemy in enemies)
             {
