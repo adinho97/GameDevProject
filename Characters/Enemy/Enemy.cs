@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevProject.Characters
+namespace GameDevProject.Characters.Enemy
 {
     public class Enemy : IGameObject, ICollidable
     {
@@ -29,7 +29,7 @@ namespace GameDevProject.Characters
         {
             enemyTexture = texture;
             position = initialPosition;
-            currentFrame = new Rectangle(0,0, 92, 90);
+            currentFrame = new Rectangle(0, 0, 92, 90);
             spriteEffects = SpriteEffects.None;
         }
 
@@ -47,7 +47,7 @@ namespace GameDevProject.Characters
                 newHeight
             );
         }
- 
+
 
 
         public void setBorder(Rectangle border)
@@ -100,12 +100,12 @@ namespace GameDevProject.Characters
 
         public void Update(GameTime gameTime)
         {
-           
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
+
         }
     }
 

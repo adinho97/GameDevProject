@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevProject.Managers
+namespace GameDevProject.Collisions
 {
     public class CollisionManager //: ICollidable
     {
@@ -122,5 +122,5 @@ namespace GameDevProject.Managers
         }
 
     }
-      
+
 }

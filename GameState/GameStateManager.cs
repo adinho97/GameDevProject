@@ -1,5 +1,4 @@
-﻿using GameDevProject.GameState;
-using GameDevProject.Interfaces;
+﻿using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevProject.Managers
+namespace GameDevProject.GameState
 {
     public class GameStateManager
     {
@@ -39,7 +38,7 @@ namespace GameDevProject.Managers
         {
             switch (state)
             {
-               // case GameState.StartScreen:
+                // case GameState.StartScreen:
                 //    currentState = new StartScreenState(UIManager.Instance);
                 //    break;
 

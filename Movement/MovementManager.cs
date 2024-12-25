@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 
-namespace GameDevProject.Managers
+namespace GameDevProject.Movement
 {
     public class MovementManager
     {
@@ -16,16 +16,16 @@ namespace GameDevProject.Managers
 
         public MovementManager(IMovementBehaviour initialBehaviour)
         {
-            this.movementBehaviour = initialBehaviour;
+            movementBehaviour = initialBehaviour;
         }
 
-        public void SetMovementBehaviour(IMovementBehaviour newBehaviour) 
+        public void SetMovementBehaviour(IMovementBehaviour newBehaviour)
         {
             movementBehaviour = newBehaviour;
         }
 
         public Vector2 UpdatePosition(Vector2 currentPosition, GameTime gameTime)
-        { 
+        {
             return movementBehaviour.Update(currentPosition, gameTime);
         }
     }

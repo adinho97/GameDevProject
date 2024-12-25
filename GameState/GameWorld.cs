@@ -1,4 +1,5 @@
 ﻿using GameDevProject.Characters;
+using GameDevProject.Characters.Enemy;
 using Microsoft.Xna.Framework.Content;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevProject.Managers
+namespace GameDevProject.GameState
 {
     public class GameWorld
     {

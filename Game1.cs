@@ -1,4 +1,5 @@
 ﻿using GameDevProject.Characters;
+using GameDevProject.Characters.Enemy;
 using GameDevProject.Collisions;
 using GameDevProject.Input;
 using GameDevProject.Interfaces;
@@ -23,10 +24,7 @@ public class Game1 : Game
     private Texture2D enemyTexture;
     private Texture2D projectileTexture; // add pro tex
     private Hero hero;
-    private Enemy enemy;
-    private List<Enemy> enemies;
-    private float spawnTimer;
-    private float spawnInterval;
+    private EnemyManager enemyManager;
     private SpriteFont font;
     private int score = 0;
 
@@ -53,9 +51,7 @@ public class Game1 : Game
         _graphics.PreferredBackBufferWidth = 1620;  // Set your desired width
         _graphics.PreferredBackBufferHeight = 860; // Set your desired height
         _graphics.ApplyChanges();
-        enemies = new List<Enemy>();
-        spawnTimer = 0;
-        spawnInterval = 3000f;
+    
         var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         borderCollision = new BorderCollision(border);
         collidables = new List<ICollidable>();
@@ -90,44 +86,10 @@ public class Game1 : Game
     {
        
         hero = new Hero(HeroTexture, new KeyboardReader());
-        enemy = new Enemy(enemyTexture, new Vector2(800, 500));
+        enemyManager = new EnemyManager(enemyTexture, collidables);
     }
 
-    private void SpawnEnemy()
-    {
-        Random random = new();
 
-        //viewport details so the enemies spawn outside of reach / no glitchy hitbox
-        int screenWidth = _graphics.PreferredBackBufferWidth;
-        int screenHeight = _graphics.PreferredBackBufferHeight;
-
-        //choose a random viewport side
-        int side = random.Next(0, 4);
-
-        Vector2 spawnPosition = Vector2.Zero;
-        //bool validPosition = false;
-        //float minDistanceFromPlayer = 250f;
-
-        switch (side)
-        {
-            case 0: //above screen
-                spawnPosition = new Vector2(random.Next(0, screenWidth), - 100); 
-                break;
-            case 1: // right
-                spawnPosition = new Vector2(screenWidth + 100, random.Next(0, screenHeight));
-                break;
-            case 2: // under
-                spawnPosition = new Vector2(random.Next(0, screenWidth), screenHeight + 100);
-                break;
-            case 3: // left
-                spawnPosition = new Vector2(-100, random.Next(0, screenHeight));
-                break;
-        }
-
-        var newEnemy = EnemyFactory.CreateEnemy("Snake", enemyTexture, spawnPosition);
-        enemies.Add(newEnemy);
-        collidables.Add(newEnemy); 
-    }
 
 
     protected override void Update(GameTime gameTime)
@@ -144,25 +106,18 @@ public class Game1 : Game
         // TODO: Add your update logic here
         hero.Update(gameTime, projectiles, projectileTexture); //add
         
-        Managers.CollisionManager.HandleCollisions(hero, collidables);
+        CollisionManager.HandleCollisions(hero, collidables);
 
-        foreach(var enemy in enemies)
-        {
-            enemy.Update(gameTime, hero.Position);
-        }
-        //timer voor spawn enemies
-        spawnTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-        if(spawnTimer >= spawnInterval)
-        {
-            SpawnEnemy();
-            spawnTimer = 0f;
-        }
+        //EnemyManager handle enemies
+        enemyManager.Update(gameTime, hero.Position);
+
         //add
         foreach (var projectile in projectiles)
         {
             projectile.Update(gameTime);
         }
-        //detect bullet collision w enemies
+        //detect bullet collision w enemies (move later to like a gameworld class)
+        var enemies = enemyManager.GetEnemies(); // Get the current enemies from the manager
         for (int i = enemies.Count - 1; i >= 0; i--) 
         {
             var enemy = enemies[i];
@@ -210,10 +165,7 @@ public class Game1 : Game
             hero.Draw(_spriteBatch);
             _spriteBatch.DrawString(font, "SCORE: " + score, new Vector2(20,20), Color.Black);
 
-            foreach (var enemy in enemies)
-            {
-                enemy.Draw(_spriteBatch, debugTexture);
-            }
+            enemyManager.Draw(_spriteBatch, debugTexture);
 
             // Draw projectiles
             foreach (var projectile in projectiles)

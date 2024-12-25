@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\managers\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:managers\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\managers\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:managers\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAgwH8AAAAeAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs*",
+              "RelativeToolTip": "Game1.cs*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwCAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T22:57:01.543Z",
               "IsPinned": true,
@@ -44,13 +44,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EnemyManager.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Managers\\EnemyManager.cs",
-              "RelativeDocumentMoniker": "Managers\\EnemyManager.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Managers\\EnemyManager.cs",
-              "RelativeToolTip": "Managers\\EnemyManager.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCkAAAAJAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\EnemyManager.cs",
+              "RelativeDocumentMoniker": "Characters\\Enemy\\EnemyManager.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\EnemyManager.cs*",
+              "RelativeToolTip": "Characters\\Enemy\\EnemyManager.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-25T17:25:04.836Z",
               "EditorCaption": ""
@@ -59,11 +59,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "EnemyFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Managers\\EnemyFactory.cs",
-              "RelativeDocumentMoniker": "Managers\\EnemyFactory.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Managers\\EnemyFactory.cs",
-              "RelativeToolTip": "Managers\\EnemyFactory.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAYAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\EnemyFactory.cs",
+              "RelativeDocumentMoniker": "Characters\\Enemy\\EnemyFactory.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\EnemyFactory.cs",
+              "RelativeToolTip": "Characters\\Enemy\\EnemyFactory.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-25T17:24:26.066Z",
               "EditorCaption": ""
@@ -72,10 +72,10 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs",
-              "RelativeDocumentMoniker": "Characters\\Enemy.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy.cs",
-              "RelativeToolTip": "Characters\\Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\Enemy.cs",
+              "RelativeDocumentMoniker": "Characters\\Enemy\\Enemy.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\Enemy.cs",
+              "RelativeToolTip": "Characters\\Enemy\\Enemy.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAQwHAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T20:02:46.439Z",
