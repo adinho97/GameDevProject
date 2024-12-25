@@ -50,9 +50,8 @@ public class Game1 : Game
         
         base.Initialize();
         
-        _graphics.PreferredBackBufferWidth = 1920;  // Set your desired width
-        _graphics.PreferredBackBufferHeight = 1080; // Set your desired height
-        _graphics.IsFullScreen = true;
+        _graphics.PreferredBackBufferWidth = 1620;  // Set your desired width
+        _graphics.PreferredBackBufferHeight = 860; // Set your desired height
         _graphics.ApplyChanges();
         enemies = new List<Enemy>();
         spawnTimer = 0;
@@ -60,8 +59,6 @@ public class Game1 : Game
         var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         borderCollision = new BorderCollision(border);
         collidables = new List<ICollidable>();
-        collidables.Add(hero);
-        collidables.Add(enemy);
 
 
     }
@@ -127,9 +124,8 @@ public class Game1 : Game
                 break;
         }
 
-        var newEnemy = new Enemy(enemyTexture, spawnPosition);
+        var newEnemy = EnemyFactory.CreateEnemy("Snake", enemyTexture, spawnPosition);
         enemies.Add(newEnemy);
-
         collidables.Add(newEnemy); 
     }
 
