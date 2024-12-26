@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/backgroundSand.jpg</SourceFile>
-  <SourceTime>2024-11-23T13:47:52.08192+01:00</SourceTime>
-  <DestFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/bin/DesktopGL/backgroundSand.xnb</DestFile>
-  <DestTime>2024-12-26T21:45:43.1179085+01:00</DestTime>
+  <SourceFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/fire.png</SourceFile>
+  <SourceTime>2024-12-26T21:43:58.7665859+01:00</SourceTime>
+  <DestFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/bin/DesktopGL/fire.xnb</DestFile>
+  <DestTime>2024-12-26T21:47:08.5472985+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
