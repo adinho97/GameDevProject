@@ -16,15 +16,15 @@ namespace GameDevProject.Characters.Enemy
         private Texture2D enemyTexture;
         private float spawnTimer;
         private float spawnInterval;
-        private List<ICollidable> collidables;
+       // private List<ICollidable> collidables; useless?
 
         public EnemyManager(Texture2D enemyTexture, List<ICollidable> collidables)
         {
             this.enemyTexture = enemyTexture;
             collidables = new List<ICollidable>();
-            this.collidables = collidables;
+            //this.collidables = collidables; iuseless?
             enemies = new List<Enemy>();
-            spawnInterval = 3000f;
+            spawnInterval = 2000f;
             spawnTimer = 0f;
         }
 
@@ -60,8 +60,8 @@ namespace GameDevProject.Characters.Enemy
         public void SpawnEnemy()
         {
             Random random = new Random();
-            int screenWidth = 1920; // Use actual screen width if needed
-            int screenHeight = 1080; // Use actual screen height if needed
+            int screenWidth = 1620; // Use actual screen width if needed
+            int screenHeight = 860; // Use actual screen height if needed
 
             int side = random.Next(0, 4);
             Vector2 spawnPosition = Vector2.Zero;
@@ -76,7 +76,7 @@ namespace GameDevProject.Characters.Enemy
 
             var newEnemy = EnemyFactory.CreateEnemy("Snake", enemyTexture, spawnPosition);
             enemies.Add(newEnemy);
-            collidables.Add(newEnemy);
+            //collidables.Add(newEnemy); //? does fuxk all, used to push hero away?
 
         }
         public List<Enemy> GetEnemies() { return enemies; }

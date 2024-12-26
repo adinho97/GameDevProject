@@ -137,6 +137,7 @@ public class Game1 : Game
                     break;
                 }
             }
+            collidables.Add(enemy); // allows hero to collide with enemy
         }
 
         //add

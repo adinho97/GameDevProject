@@ -39,3 +39,4 @@ C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\Gam
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\inGameTrack.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\fantasyFont.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\gameOver.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\Captain.xnb
