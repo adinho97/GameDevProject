@@ -9,77 +9,114 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.Characters.Enemy
 {
-    public class EnemyManager
+    public class EnemyManager : IGameObject
     {
-
-        private List<Enemy> enemies;
-        private Texture2D enemyTexture;
-        private float spawnTimer;
-        private float spawnInterval;
-       // private List<ICollidable> collidables; useless?
-
-        public EnemyManager(Texture2D enemyTexture, List<ICollidable> collidables)
+        private readonly List<string> _enemyNames = new List<string>()
         {
-            this.enemyTexture = enemyTexture;
-            collidables = new List<ICollidable>();
-            //this.collidables = collidables; iuseless?
-            enemies = new List<Enemy>();
-            spawnInterval = 2000f;
-            spawnTimer = 0f;
+            "snakeEnemy",
+            "babyEnemy",
+            "captainEnemy",
+        };
+
+        private List<Enemy> _activeEnemies;
+        private readonly IEnemyFactory _enemyFactory;
+
+        private Hero _hero;
+
+        private Texture2D _debugTexture;
+
+        private Random _random;
+        private float _spawnTimer;
+        private const float SpawnInterval = 4.0f;
+        private readonly int _screenWidth;
+        private readonly int _screenHeight;
+
+        public int Score { get; private set; }
+
+        public EnemyManager(IEnemyFactory enemyFactory, Hero hero, Texture2D debugTexture, GraphicsDevice graphicsDevice)
+        {
+            _hero = hero;
+            _activeEnemies = new List<Enemy>();
+            _enemyFactory = enemyFactory;
+
+            _random = new Random();
+            _spawnTimer = SpawnInterval;
+            _debugTexture = debugTexture;
+            _screenWidth = graphicsDevice.Viewport.Width;
+            _screenHeight = graphicsDevice.Viewport.Height;
+
+            ResetScore();
         }
 
-
-        public void Update(GameTime gameTime, Vector2 playerPosition)
+        public void ResetScore()
         {
-            Console.WriteLine("Updating enemies...");
-
-
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.Update(gameTime, playerPosition);
-            }
-
-            //timer enemy spawn
-            spawnTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (spawnTimer > spawnInterval)
-            {
-                SpawnEnemy();
-                spawnTimer = 0f;
-            }
-
+            Score = 0;  
         }
 
-        public void Draw(SpriteBatch spriteBatch, Texture2D debugTexture)
+        public void SpawnEnemy(string enemyType, Vector2 position)
         {
-            foreach (Enemy enemy in enemies)
+            var enemy = _enemyFactory.CreateEnemy(enemyType, position);
+            _activeEnemies.Add(enemy);
+        }
+
+        private Vector2 GetRandomEdgePosition()
+        {
+            int edge = _random.Next(4);
+            switch (edge)
             {
-                enemy.Draw(spriteBatch, debugTexture);
+                case 0: // Top edge
+                    return new Vector2(_random.Next(_screenWidth), 0);
+                case 1: // Bottom edge
+                    return new Vector2(_random.Next(_screenWidth), _screenHeight - 100);
+                case 2: // Left edge
+                    return new Vector2(0, _random.Next(_screenHeight));
+                case 3: // Right edge
+                    return new Vector2(_screenWidth, _random.Next(_screenHeight));
+                default:
+                    throw new InvalidOperationException("Unexpected edge value");
             }
         }
 
-        public void SpawnEnemy()
+        private void SpawnRandomEnemy()
         {
-            Random random = new Random();
-            int screenWidth = 1620; // Use actual screen width if needed
-            int screenHeight = 860; // Use actual screen height if needed
+            string enemyType = _enemyNames[_random.Next(_enemyNames.Count)];
+            Vector2 position = GetRandomEdgePosition();
+            SpawnEnemy(enemyType, position);
+        }
 
-            int side = random.Next(0, 4);
-            Vector2 spawnPosition = Vector2.Zero;
-
-            switch (side)
+        public void Update(GameTime gameTime)
+        {
+            // Spawn enemies
+            _spawnTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (_spawnTimer <= 0)
             {
-                case 0: spawnPosition = new Vector2(random.Next(0, screenWidth), -100); break; //tOP
-                case 1: spawnPosition = new Vector2(screenWidth + 100, random.Next(0, screenHeight)); break; //RIGHT
-                case 2: spawnPosition = new Vector2(random.Next(0, screenWidth), screenHeight + 100); break; // Bottom
-                case 3: spawnPosition = new Vector2(-100, random.Next(0, screenHeight)); break; // Left
+                SpawnRandomEnemy();
+                _spawnTimer = SpawnInterval;
             }
 
-            var newEnemy = EnemyFactory.CreateEnemy("Snake", enemyTexture, spawnPosition);
-            enemies.Add(newEnemy);
-            //collidables.Add(newEnemy); //? does fuxk all, used to push hero away?
+            // Update the enemies
+            for (int i = _activeEnemies.Count - 1; i >= 0; i--)
+            {
+                var enemy = _activeEnemies[i];
+                enemy.Update(gameTime, _hero);
 
+                if (!enemy.Health.IsAlive)
+                {
+                    Score += enemy.Score;
+                    _activeEnemies.RemoveAt(i);
+                }
+            }
         }
-        public List<Enemy> GetEnemies() { return enemies; }
 
+        public void Draw(SpriteBatch spritebatch)
+        {
+            foreach(var enemy in _activeEnemies)
+            {
+                enemy.Draw(spritebatch, _debugTexture);
+            }
+        }
+
+        public IReadOnlyList<Enemy> GetActiveEnemies() => _activeEnemies.AsReadOnly();
+        
     }
 }

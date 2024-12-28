@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GameDevProject.Armament;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -8,20 +9,29 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.Characters.Enemy
 {
-    public static class EnemyFactory
+    public class EnemyFactory
     {
 
-        //createenemy
-        public static Enemy CreateEnemy(string type, Texture2D texture, Vector2 position)
-        {
-            switch (type)
-            {
-                case "Snake":
-                    return new Enemy(texture, position);
+        private GraphicsDevice _device;
+        private ProjectileManager _projectileManager;
 
-                default:
-                    throw new ArgumentException("uknown type");
-            }
+        public EnemyFactory(GraphicsDevice graphicsDevice, ProjectileManager projectileManager)
+        {
+            _device = graphicsDevice;
+            _projectileManager = projectileManager;
+        }
+
+        public static Enemy CreateEnemy(string enemyType, Vector2 position)
+        {
+            Texture2D enemyTexture = ContentLoader.Instance.LoadTexture(enemyType);
+
+            return enemyType.ToLower() switch
+            {
+                "snakeenemy" => new SnakeEnemy(enemyTexture, position),
+                "babyenemy" => new BabyEnemy(enemyTexture, position, _device.Viewport.Width, _device.Viewport.Height),
+                "captainenemy" => new CaptainEnemy(enemyTexture, _projectileManager, position),
+                _ => throw new ArgumentException($"Unknown enemy type: {enemyType}")
+            };
         }
     }
 }
