@@ -16,9 +16,11 @@ namespace GameDevProject.Armament
         public Vector2 Direction { get; set; }
         private readonly Texture2D texture;
         private float speed = 10f; // Speed of the projectile
-        public bool IsActive { get; private set; } // Proper setter for activation stat    
-        // Becomes inactive when out of bounds
+        public bool IsActive { get;  set; }
 
+        public int Damage => 20;
+
+        public bool ShouldHitPlayer => false;
 
         public Cero(Texture2D texture, Vector2 position, Vector2 direction)
         {
@@ -64,9 +66,6 @@ namespace GameDevProject.Armament
             {
                 Vector2 scale = new Vector2(0.3f, 0.4f);
                 spriteBatch.Draw(texture, Position, null, Color.White, -0.2f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-
-
-
             }
         }
 
