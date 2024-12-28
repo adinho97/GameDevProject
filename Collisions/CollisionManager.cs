@@ -118,7 +118,7 @@ namespace GameDevProject.Collisions
             }
 
             // Update hero's position after resolving the collision
-            hero.setBorder(heroBorder);
+            hero.SetBorder(heroBorder);
         }
 
     }

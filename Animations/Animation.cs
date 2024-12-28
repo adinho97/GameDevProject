@@ -21,58 +21,27 @@ namespace GameDevProject.Animations
         {
             
             framesByDirection = new Dictionary<string, List<AnimationFrame>>();
+            currentFrames = new List<AnimationFrame>();
+            CurrentFrame = new AnimationFrame(Rectangle.Empty);
         }
         
         public void AddFrame(string direction, AnimationFrame animationFrame)
         {
-          
             if (!framesByDirection.ContainsKey(direction))
                 framesByDirection[direction] = new List<AnimationFrame>();
 
             framesByDirection[direction].Add(animationFrame);
-
-           
-            if (currentFrames == null)
-                currentFrames = framesByDirection[direction];
-
-            if (CurrentFrame == null)
-                CurrentFrame = framesByDirection[direction][0];
+            currentFrames = framesByDirection[direction];
+            CurrentFrame = framesByDirection[direction][0];
         }
 
         public void SetDirection(string directionString)
         {
-            currentFrames.Clear(); 
 
-            int columnIndex = 0; 
+            if (directionString == null || !framesByDirection.ContainsKey(directionString))
+                return;
 
-            // Map directionString to column index
-            switch (directionString)
-            {
-                case "up":
-                    columnIndex = 0; 
-                    break;
-                case "right":
-                    columnIndex = 1; 
-                    break;
-                case "down":
-                    columnIndex = 2; 
-                    break;
-                case "left":
-                    columnIndex = 3; 
-                    break;
-            }
-
-           
-            int frameWidth = 32;  
-            int frameHeight = 32; 
-
-          
-            for (int i = 0; i < 4; i++)
-            {
-                currentFrames.Add(new AnimationFrame(new Rectangle(columnIndex * frameWidth, i * frameHeight, frameWidth, frameHeight)));
-            }
-
-            
+            currentFrames = new List<AnimationFrame>(framesByDirection[directionString]);
         }
 
         public void Update(GameTime gameTime)

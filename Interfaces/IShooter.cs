@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using GameDevProject.Armament;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace GameDevProject.Interfaces
 {
     public interface IShooter
     {
-        void Shoot(List<IProjectile> projectiles, Texture2D projectileTexture);
+        void Shoot(ProjectileManager projectileManager, Texture2D projectileTexture);
     }
 }

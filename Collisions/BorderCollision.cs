@@ -33,7 +33,7 @@
                 if (bounds.Bottom > border.Bottom)
                     bounds.Y = border.Bottom - bounds.Height;
 
-                collidable.setBorder(bounds);
+                collidable.SetBorder(bounds);
             }
         }
     }

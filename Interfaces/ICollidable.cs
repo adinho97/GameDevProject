@@ -10,7 +10,7 @@ namespace GameDevProject.Interfaces
     public interface ICollidable
     {
         Rectangle GetBorder();
-        void setBorder(Rectangle border);
+        void SetBorder(Rectangle border);
 
         IHealth Health { get; }
     }

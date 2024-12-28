@@ -52,7 +52,7 @@ namespace GameDevProject.Characters.Enemy
 
 
 
-        public void setBorder(Rectangle border)
+        public void SetBorder(Rectangle border)
         {
             position = new Vector2(border.X, border.Y);
         }

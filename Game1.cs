@@ -1,4 +1,5 @@
-﻿using GameDevProject.Characters;
+﻿using GameDevProject.Armament;
+using GameDevProject.Characters;
 using GameDevProject.Characters.Enemy;
 using GameDevProject.Collisions;
 using GameDevProject.Input;
@@ -27,6 +28,8 @@ public class Game1 : Game
     private EnemyManager enemyManager;
     private SpriteFont font;
     private int score = 0;
+    private ProjectileManager projectileManager;
+    private KeyboardReader keyboardReader;
 
     private List<IProjectile> projectiles = new List<IProjectile>(); //add  
     private BorderCollision borderCollision;
@@ -55,6 +58,7 @@ public class Game1 : Game
         var border = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         borderCollision = new BorderCollision(border);
         collidables = new List<ICollidable>();
+        
 
 
     }
@@ -68,6 +72,7 @@ public class Game1 : Game
         HeroTexture = Content.Load<Texture2D>("tinyIchigo");
         backgroundTexture = Content.Load<Texture2D>("backgroundSand");
         projectileTexture = Content.Load<Texture2D>("SinglehollowCero");
+        projectileManager = new ProjectileManager();
         //scoreFont = Content.Load<SpriteFont>("ScoreFont");
         uiManager = new UIManager();
         uiManager.LoadContent(Content);
@@ -84,8 +89,8 @@ public class Game1 : Game
 
     private void InitializeGameObject()
     {
-       
-        hero = new Hero(HeroTexture, new KeyboardReader());
+
+        hero = new Hero(HeroTexture, projectileManager, projectileTexture, debugTexture, new KeyboardReader());
         enemyManager = new EnemyManager(enemyTexture, collidables);
     }
 
@@ -104,7 +109,7 @@ public class Game1 : Game
         }
 
         // TODO: Add your update logic here
-        hero.Update(gameTime, projectiles, projectileTexture); //add
+        hero.Update(gameTime); //add
         
         CollisionManager.HandleCollisions(hero, collidables);
 
