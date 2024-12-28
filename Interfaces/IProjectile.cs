@@ -12,7 +12,7 @@ namespace GameDevProject.Interfaces
     {
        Vector2 Position { get; set; }
        Vector2 Direction { get; set; }
-       bool IsActive { get; }
+       bool IsActive { get; set; }
        int Damage { get; }
        bool ShouldHitPlayer { get; }
        Rectangle GetBorder();

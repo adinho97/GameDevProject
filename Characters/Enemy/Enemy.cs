@@ -25,6 +25,8 @@ namespace GameDevProject.Characters.Enemy
             set { position = value; }
         }
 
+        public IHealth Health { get; private set; }
+
         public Enemy(Texture2D texture, Vector2 initialPosition)
         {
             enemyTexture = texture;

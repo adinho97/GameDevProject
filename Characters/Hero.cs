@@ -23,7 +23,7 @@ namespace GameDevProject.Characters
         private float cooldownTimer; // Cooldown duration in milliseconds
         private bool leftClickLastFrame; // To detect shooting key press transitions
 
-
+        public IHealth Health { get; private set; }
         public Vector2 Position
         {
             get { return position; }

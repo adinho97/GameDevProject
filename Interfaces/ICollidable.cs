@@ -11,5 +11,7 @@ namespace GameDevProject.Interfaces
     {
         Rectangle GetBorder();
         void setBorder(Rectangle border);
+
+        IHealth Health { get; }
     }
 }
