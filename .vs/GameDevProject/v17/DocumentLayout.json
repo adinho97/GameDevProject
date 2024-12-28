@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\input\\keyboardreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:input\\keyboardreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\collisions\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:collisions\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\collisions\\bordercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:collisions\\bordercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,14 +43,6 @@
       "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:animations\\animationframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\collisions\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:collisions\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\collisions\\bordercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:collisions\\bordercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\characters\\enemy\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:characters\\enemy\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -54,11 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
@@ -72,7 +76,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "KeyboardReader.cs",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Input\\KeyboardReader.cs",
+              "RelativeDocumentMoniker": "Input\\KeyboardReader.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Input\\KeyboardReader.cs",
+              "RelativeToolTip": "Input\\KeyboardReader.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T13:47:51.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "StartScreenState.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\StartScreenState.cs",
               "RelativeDocumentMoniker": "GameState\\StartScreenState.cs",
@@ -84,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "UIManager.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\UI\\UIManager.cs",
               "RelativeDocumentMoniker": "UI\\UIManager.cs",
@@ -96,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "AnimationFrame.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Animations\\AnimationFrame.cs",
               "RelativeDocumentMoniker": "Animations\\AnimationFrame.cs",
@@ -108,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "BorderCollision.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Collisions\\BorderCollision.cs",
               "RelativeDocumentMoniker": "Collisions\\BorderCollision.cs",
@@ -116,23 +133,25 @@
               "RelativeToolTip": "Collisions\\BorderCollision.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T23:57:16.872Z"
+              "WhenOpened": "2024-12-27T23:57:16.872Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "CollisionManager.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Collisions\\CollisionManager.cs",
               "RelativeDocumentMoniker": "Collisions\\CollisionManager.cs",
               "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Collisions\\CollisionManager.cs",
               "RelativeToolTip": "Collisions\\CollisionManager.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAQwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T20:52:51.218Z"
+              "WhenOpened": "2024-12-26T20:52:51.218Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Animation.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Animations\\Animation.cs",
               "RelativeDocumentMoniker": "Animations\\Animation.cs",
@@ -144,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Hero.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Hero.cs",
               "RelativeDocumentMoniker": "Characters\\Hero.cs",
@@ -156,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EnemyManager.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\EnemyManager.cs",
               "RelativeDocumentMoniker": "Characters\\Enemy\\EnemyManager.cs",
@@ -168,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "EnemyFactory.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\EnemyFactory.cs",
               "RelativeDocumentMoniker": "Characters\\Enemy\\EnemyFactory.cs",
@@ -180,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\Characters\\Enemy\\Enemy.cs",
               "RelativeDocumentMoniker": "Characters\\Enemy\\Enemy.cs",

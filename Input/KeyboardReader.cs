@@ -39,6 +39,11 @@ namespace GameDevProject.Input
                 directionString = "down"; 
             }
 
+            if (direction != Vector2.Zero) 
+            {
+                direction.Normalize();
+            }
+
             return (direction, directionString);
         }
 
