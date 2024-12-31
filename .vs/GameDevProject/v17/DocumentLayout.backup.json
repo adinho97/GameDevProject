@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\gamestate\\gamestatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:gamestate\\gamestatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\gamestate\\startscreenstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:gamestate\\startscreenstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\gamestate\\gameoverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:gamestate\\gameoverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\contentloading\\contentloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:contentloading\\contentloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|c:\\users\\adria\\onedrive - ap hogeschool antwerpen\\bureaublad\\gamedevopdracht\\gamedevproject\\gamestate\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D902D86-646C-4C4E-B21D-EAACCC5255E4}|GameDevProject.csproj|solutionrelative:gamestate\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StartScreenState.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\StartScreenState.cs",
-              "RelativeDocumentMoniker": "GameState\\StartScreenState.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\StartScreenState.cs",
-              "RelativeToolTip": "GameState\\StartScreenState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T23:57:55.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GameStateManager.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\GameStateManager.cs",
-              "RelativeDocumentMoniker": "GameState\\GameStateManager.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\GameStateManager.cs*",
-              "RelativeToolTip": "GameState\\GameStateManager.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwCIAAAAAAAAAAAAAAA==",
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\GameState.cs",
+              "RelativeDocumentMoniker": "GameState\\GameState.cs",
+              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\GameState.cs",
+              "RelativeToolTip": "GameState\\GameState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T23:57:55.194Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameOverState.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\GameOverState.cs",
-              "RelativeDocumentMoniker": "GameState\\GameOverState.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\GameState\\GameOverState.cs",
-              "RelativeToolTip": "GameState\\GameOverState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T23:57:47.861Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ContentLoader.cs",
-              "DocumentMoniker": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\ContentLoading\\ContentLoader.cs",
-              "RelativeDocumentMoniker": "ContentLoading\\ContentLoader.cs",
-              "ToolTip": "C:\\Users\\Adria\\OneDrive - AP Hogeschool Antwerpen\\Bureaublad\\GameDevOpdracht\\GameDevProject\\ContentLoading\\ContentLoader.cs",
-              "RelativeToolTip": "ContentLoading\\ContentLoader.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T23:44:24.714Z",
+              "WhenOpened": "2024-12-31T00:00:50.524Z",
               "EditorCaption": ""
             }
           ]

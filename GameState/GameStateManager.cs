@@ -9,28 +9,38 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.GameState
 {
+
     public class GameStateManager
     {
-        public enum GameState
+        private GameState currentState;
+        private Game1 _game;
+       
+        public Game1 Game { get { return _game; } }
+
+        public GameStateManager(Game1 game)
         {
-            StartScreen,
-            Gameplay,
-            GameOver
+            this._game = game;
         }
 
-        private static GameStateManager instance;
-
-        private GameStateManager() { }
-
-        public static GameStateManager Instance
+        public void SetState(GameState state)
         {
-            get
+            if(currentState != null)
             {
-                if (instance == null)
-                    instance = new GameStateManager();
+                currentState.Exit();
+            } 
 
-                return instance;
-            }
+            currentState = state;
+            currentState.Enter();
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            currentState?.Update(gameTime);
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            currentState?.Draw(spriteBatch);    
         }
 
     }
