@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.GameState
 {
-    public class GameOverState : IGameState
+    public class GameOverState 
     {
 
         private Texture2D gameOverScreen;

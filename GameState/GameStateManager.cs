@@ -19,7 +19,6 @@ namespace GameDevProject.GameState
         }
 
         private static GameStateManager instance;
-        private IGameState currentState;
 
         private GameStateManager() { }
 
@@ -34,32 +33,5 @@ namespace GameDevProject.GameState
             }
         }
 
-        public void SetState(GameState state)
-        {
-            switch (state)
-            {
-                // case GameState.StartScreen:
-                //    currentState = new StartScreenState(UIManager.Instance);
-                //    break;
-
-                case GameState.Gameplay:
-                    currentState = new GameplayState(GameWorld.Instance.Hero, GameWorld.Instance.Enemies, this);
-                    break;
-
-                case GameState.GameOver:
-                    currentState = new GameOverState(GameWorld.Instance.ContentManager);
-                    break;
-            }
-        }
-
-        public void Update(GameTime gameTime)
-        {
-            currentState?.Update(gameTime);
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            currentState?.Draw(spriteBatch);
-        }
     }
 }

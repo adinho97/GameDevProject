@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.GameState
 {
-    public class StartScreenState : IGameState
-    {
+    public class StartScreenState
+    { 
 
         private UIManager uiManager;
 
