@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/baby.png</SourceFile>
-  <SourceTime>2024-12-26T21:40:53.1538831+01:00</SourceTime>
-  <DestFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/bin/DesktopGL/baby.xnb</DestFile>
-  <DestTime>2024-12-26T21:47:08.5312111+01:00</DestTime>
+  <SourceFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/snakeEnemy.png</SourceFile>
+  <SourceTime>2024-12-16T21:12:56.3199994+01:00</SourceTime>
+  <DestFile>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/bin/DesktopGL/Content/snakeEnemy.xnb</DestFile>
+  <DestTime>2024-12-31T15:38:15.8793785+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

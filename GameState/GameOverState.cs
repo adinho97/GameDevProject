@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace GameDevProject.GameState
     {
 
         private Texture2D gameOverScreen;
+        private Song _gameOverScreenSong;
 
         public GameOverState(GameStateManager gameStateManager) :base(gameStateManager)
         {
@@ -25,10 +27,17 @@ namespace GameDevProject.GameState
         public override void Enter()
         {
             gameOverScreen = ContentLoader.Instance.LoadTexture("gameOver");
+            _gameOverScreenSong= ContentLoader.Instance.LoadSong("gameoverScreenTrack");
+
+            // Play the start screen track
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.1f;
+            MediaPlayer.Play(_gameOverScreenSong);
         }
         public override void Exit()
         {
-            
+            // Stop the start screen track
+            MediaPlayer.Stop();
         }
 
 

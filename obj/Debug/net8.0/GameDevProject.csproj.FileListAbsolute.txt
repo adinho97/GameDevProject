@@ -24,7 +24,6 @@ C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\Gam
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\obj\Debug\net8.0\GameDevProject.pdb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\obj\Debug\net8.0\GameDevProject.genruntimeconfig.cache
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\obj\Debug\net8.0\ref\GameDevProject.dll
-C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\baby.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\backgroundSand.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\Captain.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\fantasyFont.xnb
@@ -42,3 +41,8 @@ C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\Gam
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreenTrack.ogg
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\startScreenTrack.xnb
 C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\tinyIchigo.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\babyEnemy.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\captainEnemy.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\snakeEnemy.xnb
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\gameoverScreenTrack.ogg
+C:\Users\Adria\OneDrive - AP Hogeschool Antwerpen\Bureaublad\GameDevOpdracht\GameDevProject\bin\Debug\net8.0\Content\gameoverScreenTrack.xnb

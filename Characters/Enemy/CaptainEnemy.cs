@@ -1,5 +1,6 @@
 ﻿using GameDevProject.Animations;
 using GameDevProject.Armament;
+using GameDevProject.ContentLoading;
 using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;

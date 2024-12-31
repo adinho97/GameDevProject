@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin baby.png
+#begin babyEnemy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,7 +23,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:baby.png
+/build:babyEnemy.png
 
 #begin backgroundSand.jpg
 /importer:TextureImporter
@@ -36,6 +36,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:backgroundSand.jpg
+
+#begin captainEnemy.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:captainEnemy.png
 
 #begin fantasyFont.spritefont
 /importer:FontDescriptionImporter
@@ -55,6 +67,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:fire.png
+
+#begin gameoverScreenTrack.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:gameoverScreenTrack.mp3
 
 #begin inGameTrack.mp3
 /importer:Mp3Importer
@@ -86,7 +104,7 @@
 /processorParam:TextureFormat=Color
 /build:SinglehollowCero.png
 
-#begin snakeSprite.png
+#begin snakeEnemy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -96,7 +114,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:snakeSprite.png
+/build:snakeEnemy.png
 
 #begin startScreen.png
 /importer:TextureImporter
