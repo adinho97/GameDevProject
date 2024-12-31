@@ -71,7 +71,8 @@ namespace GameDevProject.Collisions
         }
         */
 
-        public static void HandleCollisions(ICollidable hero, List<ICollidable> collidables)
+        //removed static
+        public void HandleCollisions(ICollidable hero, List<ICollidable> collidables)
         {
             Rectangle heroBorder = hero.GetBorder();
 
@@ -89,7 +90,7 @@ namespace GameDevProject.Collisions
             }
         }
 
-        private static void ResolveCollisions(ICollidable hero, ICollidable collidable, Rectangle heroBorder, Rectangle collidableBorder)
+        private void ResolveCollisions(ICollidable hero, ICollidable collidable, Rectangle heroBorder, Rectangle collidableBorder)
         {
             // Handle collision resolution between the hero and another object
             // You can resolve the collision by adjusting the hero's position or other actions

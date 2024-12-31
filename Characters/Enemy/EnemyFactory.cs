@@ -1,4 +1,6 @@
 ﻿using GameDevProject.Armament;
+using GameDevProject.ContentLoading;
+using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.Characters.Enemy
 {
-    public class EnemyFactory
+    public class EnemyFactory : IEnemyFactory
     {
 
         private GraphicsDevice _device;
@@ -21,7 +23,7 @@ namespace GameDevProject.Characters.Enemy
             _projectileManager = projectileManager;
         }
 
-        public static Enemy CreateEnemy(string enemyType, Vector2 position)
+        public Enemy CreateEnemy(string enemyType, Vector2 position)
         {
             Texture2D enemyTexture = ContentLoader.Instance.LoadTexture(enemyType);
 

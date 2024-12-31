@@ -1,4 +1,5 @@
-﻿using GameDevProject.Interfaces;
+﻿using GameDevProject.ContentLoading;
+using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,35 +12,40 @@ using System.Threading.Tasks;
 
 namespace GameDevProject.GameState
 {
-    public class GameOverState 
+    public class GameOverState : GameState
     {
 
         private Texture2D gameOverScreen;
-        private ContentManager content;
 
-        public GameOverState(ContentManager content)
+        public GameOverState(GameStateManager gameStateManager) :base(gameStateManager)
         {
-            this.content = content;
-            LoadContent();
+          
         }
 
-        private void LoadContent()
+        public override void Enter()
         {
-            gameOverScreen = content.Load<Texture2D>("GameOverScreen");
+            gameOverScreen = ContentLoader.Instance.LoadTexture("gameOver");
+        }
+        public override void Exit()
+        {
+            
         }
 
-        public void Update(GameTime gameTime)
+
+        public override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 // Restart the game (or transition back to StartScreenState)
-                GameStateManager.Instance.SetState(GameStateManager.GameState.StartScreen);
+                gameStateManager.SetState(new GameplayState(gameStateManager));
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             spriteBatch.Draw(gameOverScreen, new Rectangle(0, 0, spriteBatch.GraphicsDevice.Viewport.Width, spriteBatch.GraphicsDevice.Viewport.Height), Color.White);
+            spriteBatch.End();
         }
     }
 }
