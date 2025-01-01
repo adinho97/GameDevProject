@@ -11,6 +11,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\spearProjectile.png" />
     <None Remove="Content\startButton.png" />
     <None Remove="Content\startScreenBackground.jpg" />
     <None Remove="Icon.ico" />

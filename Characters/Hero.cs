@@ -261,7 +261,7 @@ namespace GameDevProject.Characters
 
             // Activate cooldown
             isOnCooldown = true;
-            cooldownTimer = 250f; // Cooldown in milliseconds
+            cooldownTimer = 400f; // Cooldown in milliseconds
         }
     }
 }

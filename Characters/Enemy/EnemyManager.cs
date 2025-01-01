@@ -27,7 +27,7 @@ namespace GameDevProject.Characters.Enemy
 
         private Random _random;
         private float _spawnTimer;
-        private const float SpawnInterval = 4.0f;
+        private float SpawnInterval = 4.0f;
         private readonly int _screenWidth;
         private readonly int _screenHeight;
 
@@ -77,12 +77,39 @@ namespace GameDevProject.Characters.Enemy
             }
         }
 
+        private void SpawnRandomEnemyBasedOnScore()
+        {
+            // Determine which enemies can spawn based on the current score
+            List<string> eligibleEnemyTypes;
+
+            if (Score < 50)
+            {
+                eligibleEnemyTypes = new List<string> { "snakeEnemy" }; // Only snakes
+            }
+            else if (Score < 100)
+            {
+                eligibleEnemyTypes = new List<string> { "snakeEnemy", "babyEnemy" }; // Snakes and babies
+                SpawnInterval = 3.5f;
+            }
+            else
+            {
+                eligibleEnemyTypes = new List<string> { "snakeEnemy", "babyEnemy", "captainEnemy" }; // All types
+                SpawnInterval = 3.0f;
+            }
+
+            // Pick a random enemy from the eligible types
+            string enemyType = eligibleEnemyTypes[_random.Next(eligibleEnemyTypes.Count)];
+            Vector2 position = GetRandomEdgePosition();
+            SpawnEnemy(enemyType, position);
+        }
+       /*
         private void SpawnRandomEnemy()
         {
             string enemyType = _enemyNames[_random.Next(_enemyNames.Count)];
             Vector2 position = GetRandomEdgePosition();
             SpawnEnemy(enemyType, position);
         }
+       */
 
         public void Update(GameTime gameTime)
         {
@@ -90,7 +117,7 @@ namespace GameDevProject.Characters.Enemy
             _spawnTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (_spawnTimer <= 0)
             {
-                SpawnRandomEnemy();
+                SpawnRandomEnemyBasedOnScore();
                 _spawnTimer = SpawnInterval;
             }
 

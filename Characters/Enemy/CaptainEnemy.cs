@@ -44,7 +44,8 @@ namespace GameDevProject.Characters.Enemy
             cooldownTimer = 0f;
 
             this.projectileManager = projectileManager;
-            projectileTexture = ContentLoader.Instance.LoadTexture("SinglehollowCero"); //change kind of bullet later maybe to blast
+            projectileTexture = ContentLoader.Instance.LoadTexture("SingleHollowCero"); //change kind of bullet later maybe to blast
+            //projectileTexture = ContentLoader.Instance.LoadTexture("blackCero");
         }
 
         protected override Animation SetupAnimation()
