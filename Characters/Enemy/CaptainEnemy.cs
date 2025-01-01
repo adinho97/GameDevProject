@@ -20,7 +20,7 @@ namespace GameDevProject.Characters.Enemy
         public override int DamageToDealToPlayer => 20;
 
         public override int Score => 30;
-        protected override float Speed => 100;
+        protected override float Speed => 120;
 
         protected override float Scale => 1.5f;
 
@@ -101,7 +101,6 @@ namespace GameDevProject.Characters.Enemy
 
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             Vector2 direction = Vector2.Zero;
-
             // Chase the player => change this to run away later
             direction = playerPosition - Position;
             if (direction != Vector2.Zero)
@@ -109,10 +108,29 @@ namespace GameDevProject.Characters.Enemy
                 direction.Normalize();
             }
 
+            /*
+               // Calculate distance to the player RUN AWAY
+    Vector2 distanceToPlayer = playerPosition - Position;
+    float distanceMagnitude = distanceToPlayer.Length();
+
+    // Behavior logic
+    if (distanceMagnitude < 150) // Run away when too close
+    {
+        direction = Position - playerPosition; // Move away from the player
+    }
+    else // Chase the player
+    {
+        direction = playerPosition - Position; // Move toward the player
+    }
+
+    if (direction != Vector2.Zero)
+    {
+        direction.Normalize();
+    }
+            */
+
             // Update position
-            Position += direction * Speed * deltaTime;
-
-
+            Position += direction * Speed * deltaTime; 
             // Set animation direction
             if (MathF.Abs(direction.X) > MathF.Abs(direction.Y))
             {
@@ -138,6 +156,7 @@ namespace GameDevProject.Characters.Enemy
                     directionString = "up";
                 }
             }
+
             Animation.SetDirection(directionString);
         }
 
