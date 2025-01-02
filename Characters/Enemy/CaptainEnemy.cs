@@ -40,6 +40,13 @@ namespace GameDevProject.Characters.Enemy
 
         private SoundEffect shootSound;
 
+        private float dashCooldown = 3000f; // Cooldown in milliseconden voor dash
+        private float dashDuration = 500f; // Dash duurtijd in milliseconden
+        private float dashSpeedMultiplier = 3f; // Hoeveel sneller tijdens een dash
+        private float dashCooldownTimer = 0f; // Aparte cooldown voor dash
+        private float dashTimer = 0f;
+        private bool isDashing = false;
+
         public CaptainEnemy(Texture2D texture, ProjectileManager projectileManager, Vector2 initialPosition) : base(texture, initialPosition)
         {
             // Initialize shooting mechanics
@@ -90,20 +97,101 @@ namespace GameDevProject.Characters.Enemy
 
         protected override void UpdateMovement(GameTime gameTime, Vector2 playerPosition)
         {
-            //Update cooldown timer for shooting
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            // Update cooldown timer voor het schieten (onafhankelijk van dashing)
             if (isOnCooldown)
+            {
+                cooldownTimer -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (cooldownTimer <= 0f)
                 {
-                    cooldownTimer -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    if (cooldownTimer <= 0f)
-                    {
-                        isOnCooldown = false;
-                        cooldownTimer = 0f;
-                    }
+                    isOnCooldown = false;
+                    cooldownTimer = 0f;
+                }
+            }
+            else
+            {
+                Shoot(projectileManager, projectileTexture);
+            }
+
+            // Bereken richting naar de speler
+            Vector2 direction = playerPosition - Position;
+            if (direction != Vector2.Zero)
+            {
+                direction.Normalize();
+            }
+
+            if (isDashing)
+            {
+                // Dash logica
+                dashTimer -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                if (dashTimer <= 0f)
+                {
+                    // Stop dashing en start cooldown
+                    isDashing = false;
+                    dashCooldownTimer = dashCooldown;
                 }
                 else
                 {
-                    Shoot(projectileManager, projectileTexture);
+                    // Beweeg sneller richting de speler
+                    Position += direction * Speed * dashSpeedMultiplier * deltaTime;
                 }
+            }
+            else
+            {
+                // Cooldown logica voor dash
+                if (dashCooldownTimer > 0f)
+                {
+                    dashCooldownTimer -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                }
+                else
+                {
+                    // Start een nieuwe dash
+                    isDashing = true;
+                    dashTimer = dashDuration;
+                }
+
+                // Normale beweging (chase logica)
+                Position += direction * Speed * deltaTime;
+            }
+
+            // Update animatie richting alleen gebaseerd op normale beweging
+            if (!isDashing)
+            {
+                if (MathF.Abs(direction.X) > MathF.Abs(direction.Y))
+                {
+                    // Horizontale beweging
+                    directionString = direction.X > 0 ? "right" : "left";
+                }
+                else if (direction.Y != 0)
+                {
+                    // Verticale beweging
+                    directionString = direction.Y > 0 ? "down" : "up";
+                }
+
+                Animation.SetDirection(directionString);
+            }
+        }
+
+        // old update w only chase movement
+        /*
+        protected override void UpdateMovement(GameTime gameTime, Vector2 playerPosition)
+        {
+            //Update cooldown timer for shooting
+            if (isOnCooldown)
+            {
+                cooldownTimer -= (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (cooldownTimer <= 0f)
+                {
+                    isOnCooldown = false;
+                    cooldownTimer = 0f;
+                }
+            }
+            else
+            {
+                Shoot(projectileManager, projectileTexture);
+            }
 
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             Vector2 direction = Vector2.Zero;
@@ -113,30 +201,8 @@ namespace GameDevProject.Characters.Enemy
             {
                 direction.Normalize();
             }
-
-            /*
-               // Calculate distance to the player RUN AWAY
-    Vector2 distanceToPlayer = playerPosition - Position;
-    float distanceMagnitude = distanceToPlayer.Length();
-
-    // Behavior logic
-    if (distanceMagnitude < 150) // Run away when too close
-    {
-        direction = Position - playerPosition; // Move away from the player
-    }
-    else // Chase the player
-    {
-        direction = playerPosition - Position; // Move toward the player
-    }
-
-    if (direction != Vector2.Zero)
-    {
-        direction.Normalize();
-    }
-            */
-
             // Update position
-            Position += direction * Speed * deltaTime; 
+            Position += direction * Speed * deltaTime;
             // Set animation direction
             if (MathF.Abs(direction.X) > MathF.Abs(direction.Y))
             {
@@ -165,7 +231,29 @@ namespace GameDevProject.Characters.Enemy
 
             Animation.SetDirection(directionString);
         }
+        */
 
+        // run away logic
+        /*
+           // Calculate distance to the player RUN AWAY
+    Vector2 distanceToPlayer = playerPosition - Position;
+    float distanceMagnitude = distanceToPlayer.Length();
+
+    // Behavior logic
+    if (distanceMagnitude < 150) // Run away when too close
+    {
+        direction = Position - playerPosition; // Move away from the player
+    }
+    else // Chase the player
+    {
+        direction = playerPosition - Position; // Move toward the player
+    }
+
+    if (direction != Vector2.Zero)
+    {
+        direction.Normalize();
+    }
+         * */
         public void Shoot(ProjectileManager projectileManager, Texture2D projectileTexture)
         {
             // Prevent firing if cooldown is active
