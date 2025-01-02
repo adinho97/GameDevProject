@@ -16,7 +16,7 @@ namespace GameDevProject.Characters.Enemy
 {
     public class CaptainEnemy : Enemy, IShooter
     {
-        public override int MaxHealth => 150;
+        public override int MaxHealth => 200;
 
         public override int DamageToDealToPlayer => 20;
 

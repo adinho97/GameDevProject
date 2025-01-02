@@ -12,10 +12,10 @@ namespace GameDevProject.Armament
     public class CaptainProjectile : IProjectile
     {
         public Vector2 Position { get; set; }
-        public Vector2 Direction { get; set; }
+        public Vector2 Direction { get; set; } 
         public bool IsActive { get; set; }
 
-        public int Damage => 10;
+        public int Damage => 20;
 
         private readonly Texture2D texture;
         private float speed = 8f; //note to self add super fast and decreasing effect
