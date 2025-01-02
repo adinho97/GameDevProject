@@ -37,6 +37,18 @@
 /processorParam:TextureFormat=Color
 /build:backgroundSand.jpg
 
+#begin captainBlast.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:captainBlast.png
+
 #begin captainEnemy.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -48,6 +60,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:captainEnemy.png
+
+#begin ceroBlast.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ceroBlast.mp3
 
 #begin fantasyFont.spritefont
 /importer:FontDescriptionImporter
@@ -86,11 +104,35 @@
 /processorParam:Quality=Best
 /build:gameoverScreenTrack.mp3
 
+#begin gameWonScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:gameWonScreen.png
+
+#begin gameWonTrack.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:gameWonTrack.mp3
+
 #begin inGameTrack.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:inGameTrack.mp3
+
+#begin SandRun.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SandRun.mp3
 
 #begin SinglehollowCero.png
 /importer:TextureImporter

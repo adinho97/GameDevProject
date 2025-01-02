@@ -6,12 +6,17 @@
   <SourceFiles>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/babyEnemy.png</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/backgroundSand.jpg</File>
+    <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/captainBlast.png</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/captainEnemy.png</File>
+    <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/ceroBlast.mp3</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/fantasyFont.spritefont</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/fire.png</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/fireBall.png</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/gameoverScreenTrack.mp3</File>
+    <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/gameWonScreen.png</File>
+    <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/gameWonTrack.mp3</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/inGameTrack.mp3</File>
+    <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/SandRun.mp3</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/SinglehollowCero.png</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/snakeEnemy.png</File>
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/startScreen.png</File>
@@ -19,6 +24,11 @@
     <File>C:/Users/Adria/OneDrive - AP Hogeschool Antwerpen/Bureaublad/GameDevOpdracht/GameDevProject/Content/tinyIchigo.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

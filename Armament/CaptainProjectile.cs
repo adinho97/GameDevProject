@@ -32,7 +32,7 @@ namespace GameDevProject.Armament
         {
             if (IsActive)
             {
-                Vector2 scale = new Vector2(1f, 0.8f);
+                Vector2 scale = new Vector2(1.5f, 1.2f);
                 spriteBatch.Draw(texture, Position, null, Color.White, -0.2f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
         }

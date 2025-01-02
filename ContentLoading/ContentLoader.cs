@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using System;
@@ -28,11 +29,14 @@ namespace GameDevProject.ContentLoading
         private Dictionary<string, Texture2D> _textures;
         private Dictionary<string, Song> _songs;
         private ContentManager _content;
+        private Dictionary<string, SoundEffect> _soundEffects; // Add a dictionary for SoundEffect
 
         private ContentLoader()
         {
             _textures = new Dictionary<string, Texture2D>();
             _songs = new Dictionary<string, Song>();
+            _soundEffects = new Dictionary<string, SoundEffect>(); // Initialize the SoundEffect dictionary
+
         }
 
         public static void Initialize(ContentManager content)
@@ -67,6 +71,15 @@ namespace GameDevProject.ContentLoading
                 _songs.Add(contentName, _content.Load<Song>(contentName));
             }
             return (_songs[contentName]);   
+        }
+
+        public SoundEffect LoadSoundEffect(string contentName) // New method for loading SoundEffect
+        {
+            if (!_soundEffects.ContainsKey(contentName))
+            {
+                _soundEffects.Add(contentName, _content.Load<SoundEffect>(contentName));
+            }
+            return (_soundEffects[contentName]);
         }
     }
 }

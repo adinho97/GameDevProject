@@ -3,6 +3,7 @@ using GameDevProject.Armament;
 using GameDevProject.ContentLoading;
 using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -15,12 +16,12 @@ namespace GameDevProject.Characters.Enemy
 {
     public class CaptainEnemy : Enemy, IShooter
     {
-        public override int MaxHealth => 80;
+        public override int MaxHealth => 150;
 
         public override int DamageToDealToPlayer => 20;
 
-        public override int Score => 30;
-        protected override float Speed => 120;
+        public override int Score => 50;
+        protected override float Speed => 110;
 
         protected override float Scale => 1.5f;
 
@@ -37,6 +38,8 @@ namespace GameDevProject.Characters.Enemy
         private ProjectileManager projectileManager;
         private Texture2D projectileTexture;
 
+        private SoundEffect shootSound;
+
         public CaptainEnemy(Texture2D texture, ProjectileManager projectileManager, Vector2 initialPosition) : base(texture, initialPosition)
         {
             // Initialize shooting mechanics
@@ -44,8 +47,9 @@ namespace GameDevProject.Characters.Enemy
             cooldownTimer = 0f;
 
             this.projectileManager = projectileManager;
-            projectileTexture = ContentLoader.Instance.LoadTexture("SingleHollowCero"); //change kind of bullet later maybe to blast
-            //projectileTexture = ContentLoader.Instance.LoadTexture("blackCero");
+            //projectileTexture = ContentLoader.Instance.LoadTexture("SingleHollowCero"); //change kind of bullet later maybe to blast
+            projectileTexture = ContentLoader.Instance.LoadTexture("captainBlast");
+             shootSound = ContentLoader.Instance.LoadSoundEffect("ceroBlast");
         }
 
         protected override Animation SetupAnimation()
@@ -80,6 +84,8 @@ namespace GameDevProject.Characters.Enemy
             animation.AddFrame("up", new AnimationFrame(new Rectangle(144, 192, 48, 64)));
 
             return animation;
+
+
         }
 
         protected override void UpdateMovement(GameTime gameTime, Vector2 playerPosition)
@@ -191,6 +197,9 @@ namespace GameDevProject.Characters.Enemy
             // Create and add the projectile
             var newProjectile = new CaptainProjectile(projectileTexture, Position, projectileDirection);
             projectileManager.Add(newProjectile);
+
+            // Play shooting sound
+            shootSound.Play(0.1f, 0f, 0f); // Volume, pitch, and pan
 
             // Activate cooldown
             isOnCooldown = true;

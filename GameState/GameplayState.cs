@@ -74,7 +74,7 @@ namespace GameDevProject.GameState
             inGameSong = ContentLoader.Instance.LoadSong("inGameTrack");
             // Play it
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = 0.1f;
+            MediaPlayer.Volume = 0.05f;
             MediaPlayer.Play(inGameSong);
         }
 
@@ -90,6 +90,13 @@ namespace GameDevProject.GameState
             if (!hero.Health.IsAlive)
             {
                 gameStateManager.SetState(new GameOverState(gameStateManager));
+                return;
+            }
+
+            //game won transition
+            if (enemyManager.Score >= 200)
+            {
+                gameStateManager.SetState(new GameWonState(gameStateManager));
                 return;
             }
 

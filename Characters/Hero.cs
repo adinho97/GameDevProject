@@ -6,8 +6,11 @@ using GameDevProject.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using System.Collections.Generic;
+using GameDevProject.ContentLoading;
+using Microsoft.Xna.Framework.Media;
 
 namespace GameDevProject.Characters
 {
@@ -29,6 +32,11 @@ namespace GameDevProject.Characters
         private ProjectileManager projectileManager;
 
         private Texture2D _debugTexture;
+
+        private SoundEffect shootSound;
+        private SoundEffect walkingSound;
+        private SoundEffectInstance walkingSoundInstance;  // Instance of the walking sound
+
         public IHealth Health { get; private set; }
 
         //natural movement/feel w speed up
@@ -89,6 +97,9 @@ namespace GameDevProject.Characters
             isOnCooldown = false;
             cooldownTimer = 0f;
             leftClickLastFrame = false;
+
+            shootSound = ContentLoader.Instance.LoadSoundEffect("ceroBlast");
+            walkingSound = ContentLoader.Instance.LoadSoundEffect("sandRun");
 
         }
 
@@ -156,9 +167,24 @@ namespace GameDevProject.Characters
                 // Update the animation based on the current direction
                 animation.SetDirection(currentDirection);
                 animation.Update(gameTime);
+
+                // Play walking sound if not already playing
+                if (walkingSoundInstance == null || walkingSoundInstance.State == SoundState.Stopped)
+                {
+                    walkingSoundInstance = walkingSound.CreateInstance();
+                    walkingSoundInstance.IsLooped = true;
+                    walkingSoundInstance.Volume = 0.3f; // Set volume to 30% 
+                    walkingSoundInstance.Play();
+                }
             }
             else
             {
+                // Stop the walking sound if the character stops
+                if (walkingSoundInstance != null && walkingSoundInstance.State == SoundState.Playing)
+                {
+                    walkingSoundInstance.Stop();
+                }
+
                 // Decelerate gradually when no input is provided
                 if (velocity.Length() > Deceleration)
                 {
@@ -258,6 +284,9 @@ namespace GameDevProject.Characters
             // Create and add the projectile
             var newProjectile = new Cero(projectileTexture, Position, projectileDirection);
             projectileManager.Add(newProjectile);
+
+            // Play shooting sound
+            shootSound.Play(0.15f, 0f, 0.5f); // Volume, pitch, and pan
 
             // Activate cooldown
             isOnCooldown = true;

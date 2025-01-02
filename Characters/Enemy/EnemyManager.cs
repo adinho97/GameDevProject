@@ -27,9 +27,11 @@ namespace GameDevProject.Characters.Enemy
 
         private Random _random;
         private float _spawnTimer;
-        private float SpawnInterval = 4.0f;
+        private float SpawnInterval;
         private readonly int _screenWidth;
         private readonly int _screenHeight;
+
+        private bool captainSpawned = false; // Flag to check if a captain has ever spawned
 
         public int Score { get; private set; }
 
@@ -85,22 +87,48 @@ namespace GameDevProject.Characters.Enemy
             if (Score < 50)
             {
                 eligibleEnemyTypes = new List<string> { "snakeEnemy" }; // Only snakes
+                SpawnInterval = 1.5f;
             }
             else if (Score < 100)
             {
                 eligibleEnemyTypes = new List<string> { "snakeEnemy", "babyEnemy" }; // Snakes and babies
-                SpawnInterval = 3.5f;
+                SpawnInterval = 2.5f;
             }
             else
             {
+                // If the captain has already spawned, exclude it permanently
+                eligibleEnemyTypes = captainSpawned
+                    ? new List<string> { "snakeEnemy", "babyEnemy" }
+                    : new List<string> { "snakeEnemy", "babyEnemy", "captainEnemy" };
+
+                SpawnInterval = 5.0f;
+            }
+
+            // Pick a random enemy from the eligible types
+            string enemyType = eligibleEnemyTypes[_random.Next(eligibleEnemyTypes.Count)];
+
+            // If a captain is spawned, set the flag permanently
+            if (enemyType == "captainEnemy")
+            {
+                captainSpawned = true;
+            }
+
+            // Spawn the enemy
+            Vector2 position = GetRandomEdgePosition();
+            SpawnEnemy(enemyType, position);
+
+            /*
+            else
+            {
                 eligibleEnemyTypes = new List<string> { "snakeEnemy", "babyEnemy", "captainEnemy" }; // All types
-                SpawnInterval = 3.0f;
+                SpawnInterval = 4.0f;
             }
 
             // Pick a random enemy from the eligible types
             string enemyType = eligibleEnemyTypes[_random.Next(eligibleEnemyTypes.Count)];
             Vector2 position = GetRandomEdgePosition();
             SpawnEnemy(enemyType, position);
+            */
         }
        /*
         private void SpawnRandomEnemy()
